@@ -16,7 +16,7 @@ As a result, the code quality, data structures, and state management flows withi
 
 ## 📱 Implemented Features & Logistics Workflows
 * **Order & Ticket Lifecycle:** Dedicated, state-driven screens displaying active, pending, and historical rental orders, order detail views, and e-vouchers (transport validation tickets).
-* **Fleet Tracking via OpenStreetMap (OSM):** Native map integration rendering detailed route visualizations. The codebase contains full production logic for dynamic layout telemetry ingestion (polling interval array appending). For demonstration efficiency, the UI is configured to ingest historical vehicle logs from local JSON to instantly render completed routes with 'Start' and 'End' markers, avoiding real-time waiting bottlenecks during technical evaluation.
+* **Fleet Tracking via OpenStreetMap (OSM):** Native map integration rendering detailed route visualizations. The codebase contains full production logic for dynamic vehicle telemetry ingestion (polling interval array appending). For demonstration efficiency, the UI is configured to ingest historical vehicle logs from local JSON to instantly render completed routes with 'Start' and 'End' markers, avoiding real-time waiting bottlenecks during technical evaluation.
 * **Offline-First Resilience:** Architecture optimized for zero-latency UI rendering and localized data operations, vital for transport operations in low-connectivity field zones.
 
 ## 🛠 Architectural Stack

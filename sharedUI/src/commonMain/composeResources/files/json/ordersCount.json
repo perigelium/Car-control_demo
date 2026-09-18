@@ -1,0 +1,13 @@
+﻿{
+  "body" : {
+    "Count" : 6,
+    "Limit" : 100,
+    "Offset" : 0,
+    "PageCount" : 10,
+    "PageNumber" : 1
+  },
+  "dt" : "2026-08-16 21:21:33.501817+02",
+  "ref" : "aae3d6d7-b4ec-41bb-b682-a622a05d3adf",
+  "sign" : "08ad21a165725a7a67dc7de2542f2c13",
+  "time" : "0:00:00.061142"
+}

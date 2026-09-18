@@ -1,0 +1,79 @@
+﻿{
+  "body" : [ {
+    "NavDeviceId" : 28148119,
+    "OrderId" : "fb7bba85-af7b-225b-896b-745ec9a18a9f",
+    "OrderNumber" : "001781622",
+    "Picture" : "Car",
+    "RentEndDate" : "2026-08-31T16:00:00",
+    "RentStartDate" : "2026-08-31T07:00:00",
+    "RowId" : "e7b5d507-fab8-4748-a769-dd407e49727a",
+    "Ticket" : {
+      "ConfirmedTime" : 1680,
+      "DriverName" : "o o o",
+      "DriverPhone" : "+359872355177",
+      "EndDate" : "2026-09-01T07:00:00+02:00",
+      "EquipmentTime" : 0,
+      "Mileage" : 936,
+      "MobileWaybill" : false,
+      "StartDate" : "2026-08-31T01:00:00+02:00"
+    },
+    "Token" : "e75b77b9c6035c7f3a5e9b57dab76c37AE05FC58E251B53B8E4C861AD0DE272B493A8D82",
+    "VehicleId" : "a7349a86-9490-46d0-b66d-8e67212973f9",
+    "VehicleNumber" : "o840o797",
+    "WialonToken" : "e75b77b9c6035c7f3a5e9b57dab76c37AE05FC58E251B53B8E4C861AD0DE272B493A8D82",
+    "WialonURL" : "o",
+    "Zones" : null
+  }, {
+    "NavDeviceId" : 28148119,
+    "OrderId" : "91ba13ea-1a40-4f4f-b4c7-691cdd5a6046",
+    "OrderNumber" : "001788754",
+    "Picture" : "Car",
+    "RentEndDate" : "2026-09-01T16:00:00",
+    "RentStartDate" : "2026-09-01T07:00:00",
+    "RowId" : "c4c2392b-9c76-4b3b-a345-cb47148bc424",
+    "Ticket" : {
+      "ConfirmedTime" : 480,
+      "DriverName" : "o o o",
+      "DriverPhone" : "+359063318419",
+      "EndDate" : "2026-09-01T16:00:00+02:00",
+      "EquipmentTime" : 0,
+      "Mileage" : 260,
+      "MobileWaybill" : false,
+      "StartDate" : "2026-09-01T07:00:00+02:00"
+    },
+    "Token" : "e75b77b9c6035c7f3a5e9b57dab76c37AE05FC58E251B53B8E4C861AD0DE272B493A8D82",
+    "VehicleId" : "a7349a86-9490-46d0-b66d-8e67212973f9",
+    "VehicleNumber" : "o840o797",
+    "WialonToken" : "e75b77b9c6035c7f3a5e9b57dab76c37AE05FC58E251B53B8E4C861AD0DE272B493A8D82",
+    "WialonURL" : "o",
+    "Zones" : null
+  }, {
+    "NavDeviceId" : 17391591,
+    "OrderId" : "750164ba-0206-20bb-83d9-3656c61c90be",
+    "OrderNumber" : "001790312",
+    "Picture" : "Car",
+    "RentEndDate" : "2026-09-01T16:00:00",
+    "RentStartDate" : "2026-09-01T07:00:00",
+    "RowId" : "155084ca-1ee5-448b-a9b3-c2305e894fb6",
+    "Ticket" : {
+      "ConfirmedTime" : 480,
+      "DriverName" : "o o o",
+      "DriverPhone" : "+359274312735",
+      "EndDate" : "2026-09-01T16:00:00+02:00",
+      "EquipmentTime" : 0,
+      "Mileage" : 156,
+      "MobileWaybill" : false,
+      "StartDate" : "2026-09-01T07:00:00+02:00"
+    },
+    "Token" : "e75b77b9c6035c7f3a5e9b57dab76c37AE05FC58E251B53B8E4C861AD0DE272B493A8D82",
+    "VehicleId" : "5fc35f0f-3154-44d2-8f2d-4ea95a7b566f",
+    "VehicleNumber" : "o491o716",
+    "WialonToken" : "e75b77b9c6035c7f3a5e9b57dab76c37AE05FC58E251B53B8E4C861AD0DE272B493A8D82",
+    "WialonURL" : "",
+    "Zones" : null
+  } ],
+  "dt" : "2026-09-03 16:39:45.594012+02",
+  "ref" : "34b788f0-0110-451a-955b-761ec3a353bb",
+  "sign" : "10be8b7fbadcf60c94b073b81d9ea2fe",
+  "time" : "0:00:00.551380"
+}

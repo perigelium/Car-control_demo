@@ -1,0 +1,10 @@
+﻿{
+  "body" : {
+    "msg" : "Order is cancelled succesfully",
+    "code" : 0
+  },
+  "dt" : "2026-08-16 19:41:05.305074+02",
+  "ref" : "34210e70-082f-4a6e-9734-316cf9966dc0",
+  "sign" : "67df915ee8d9a473b1232bdb97805f97",
+  "time" : "0:00:02.444116"
+}

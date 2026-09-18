@@ -1,0 +1,28 @@
+﻿{
+  "body" : {
+    "DashboardViewType" : "medium",
+    "GeneralChatId" : "019b71e5-78d7-4695-9d51-55863928cc6c",
+    "IsCustomer" : true,
+    "IsSupplier" : false,
+    "PersonalChatId" : "04ae3321-38ec-4fb4-a3fa-efb9126cd124",
+    "Profile" : {
+      "ClientOptions" : [ "CMBORD", "COMBINE", "EMAIL", "RTKZ" ],
+      "Email" : null,
+      "Functions" : [ "MGR" ],
+      "Info" : null,
+      "IsAgreementAccepted" : true,
+      "Latitude" : null,
+      "Longitude" : null,
+      "Phone" : null,
+      "UserName" : "Demo user"
+    },
+    "ProjectCode" : "RHD",
+    "SessionKey" : "2c06ddc0-ad51-42cb-b681-4555ca4e1753",
+    "UserId" : "fcc414d3-69eb-11ea-914d-c4346bc03f7c",
+    "code" : 0
+  },
+  "dt" : "2026-08-16 19:41:05.305074+02",
+  "ref" : "34210e70-082f-4a6e-9734-316cf9966dc0",
+  "sign" : "67df915ee8d9a473b1232bdb97805f97",
+  "time" : "0:00:02.444116"
+}

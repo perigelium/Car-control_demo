@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 *.iml
 .gradle
@@ -40,6 +41,8 @@ DerivedData/
 # Ignore iOS specific binaries on Windows
 iosApp/iosApp/Frameworks/
 
+=======
+>>>>>>> cd47863dce4be4cf95e71bfacc9f64df8b949554
 *.iml
 .gradle
 /local.properties
@@ -81,4 +84,8 @@ DerivedData/
 
 # Android Studio / IntelliJ IDEA
 .idea/
+<<<<<<< HEAD
 /build/
+=======
+/build/
+>>>>>>> cd47863dce4be4cf95e71bfacc9f64df8b949554

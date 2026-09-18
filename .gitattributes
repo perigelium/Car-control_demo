@@ -29,8 +29,19 @@ gradlew text eol=lf
 
 
 # Exclude all native iOS build/configuration directories from statistics
-iosApp/** linguist-vendored
 iosMain/** linguist-vendored
 *.xcodeproj/** linguist-vendored
 *.xcworkspace/** linguist-vendored
+
+# Ignore all compiled Apple dependency frameworks from language stats
+*.xcframework/** linguist-vendored
+
+# Ignore standard project structures
+iosApp.xcodeproj/** linguist-vendored
+iosApp/** linguist-vendored
+
+# Safety extension overrides
+*.m linguist-vendored
+*.h linguist-vendored
+*.c linguist-vendored
 

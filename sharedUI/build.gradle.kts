@@ -78,8 +78,6 @@ kotlin {
 
 			implementation(libs.korlibs.crypto)
 
-			api(libs.kmpnotifier)
-
 			implementation(libs.navigation.compose)
 
 			implementation(libs.compose.icons.core)
@@ -99,10 +97,6 @@ kotlin {
 		androidMain.dependencies {
 			implementation(libs.kotlinx.coroutines.android)
 			implementation(libs.ktor.client.okhttp)
-
-			implementation(libs.firebase.crashlytics.ktx)
-			implementation(libs.firebase.analytics.ktx)
-			implementation(libs.firebase.messaging.ktx)
 
 			implementation(libs.androidx.sqlite)
 			implementation(libs.osmdroid.android)

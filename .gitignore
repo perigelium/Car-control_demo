@@ -1,91 +1,50 @@
-<<<<<<< HEAD
-
-*.iml
-.gradle
-.idea
-.kotlin
-.DS_Store
-build
-*/build
-captures
-.externalNativeBuild
-.cxx
-local.properties
-xcuserdata/
-Pods/
-*.jks
-*.gpg
-*yarn.lock
-
-
-# iOS Simulator and Xcode artifacts
-*.xcuserstate
-*.xcworkspace/
-DerivedData/
-
-# Block any files or folders starting with arm64 prefixes
-**/arm64-*
-**/arm64_*
-**/*arm64*
-
-# 1. Firebase messaging framework whitelist rules
-!**/*.xcframework/
-!**/*.xcframework/**
-
-# 2. STRIP CACHES INSIDE THE FRAMEWORKS:
-**/*.xcframework/**/.DS_Store
-**/*.xcframework**/_CodeSignature/
-
-*.xcframework/** binary
-
-# Ignore iOS specific binaries on Windows
-iosApp/iosApp/Frameworks/
-
-=======
->>>>>>> cd47863dce4be4cf95e71bfacc9f64df8b949554
-*.iml
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/tasks.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-
-# Kotlin Multiplatform / Compose Multiplatform specific
-.kotlin
-/composeApp/build
-/iosApp/build
-/iosApp/.pages
-/iosApp/.DS_Store
-
-# Xcode / iOS specific
+# ====================================================================
+# Android Studio / IntelliJ / Kotlin / Gradle Caches
+# ====================================================================
+.gradle/
+.kotlin/
+.idea/
 build/
+**/build/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+
+# ====================================================================
+# Apple / iOS / Xcode Templates & Caches
+# ====================================================================
+.DS_Store
+**/ .DS_Store
+DerivedData/
+*.xcuserstate
+*.moved-aside
 *.pbxuser
 *.mode1v3
 *.mode2v3
 *.perspectivev3
-!default.pbxuser
-!default.mode1v3
-!default.mode2v3
-!default.perspectivev3
-xcuserdata/
 *.xccheckout
-*.moved-aside
-DerivedData/
 *.hmap
 *.ipa
-*.dSYM.zip
 *.dSYM
+*.dSYM.zip
+xcuserdata/
+**/xcuserdata/
 
-# Android Studio / IntelliJ IDEA
-.idea/
-<<<<<<< HEAD
-/build/
-=======
-/build/
->>>>>>> cd47863dce4be4cf95e71bfacc9f64df8b949554
+# ====================================================================
+# Kotlin Multiplatform Generated Frameworks & Binaries
+# ====================================================================
+**/sharedUI.framework
+
+*.xcframework/
+**/*.xcframework/
+
+iosApp/iosApp/Frameworks/*
+!iosApp/iosApp/Frameworks/
+
+# ====================================================================
+# Security & Signing (Keystores)
+# ====================================================================
+*.jks
+*.gpg

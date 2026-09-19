@@ -8,7 +8,6 @@ import androidx.compose.ui.*
 import androidx.navigation.compose.*
 import autocontrol.sharedui.generated.resources.*
 import business.core.*
-import com.mmk.kmpnotifier.notification.*
 import eu.vctrl4.business.constants.*
 import eu.vctrl4.common.*
 import eu.vctrl4.presentation.navigation.*
@@ -42,9 +41,6 @@ internal fun App() {
 			val scope = rememberCoroutineScope()
 
 			fun next() {
-				val permissionUtil = NotifierManager.getPermissionUtil()
-				permissionUtil.askNotificationPermission()
-
 				navigator.navigate(AppStartNavigation.Main)
 			}
 

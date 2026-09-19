@@ -180,7 +180,7 @@
     <string name="suburban">Suburban</string>
     <string name="success_order_cancelled">success, order cancelled</string>
     <string name="success_selection_sent">success selection sent</string>
-    <string name="thank_you_for_your_submission">Thank you for your submission !</string>
+    <string name="your_decision_has_been_successfully_submitted">Your decision has been successfully submitted.</string>
     <string name="ticket_confirmation">ticket confirmation</string>
     <string name="ticket_state">ticket state</string>
     <string name="ticket_status">ticket status</string>

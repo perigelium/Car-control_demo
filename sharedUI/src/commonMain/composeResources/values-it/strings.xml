@@ -187,7 +187,7 @@
     <string name="suburban">Suburbano</string>
     <string name="success_order_cancelled">successo, ordine annullato</string>
     <string name="success_selection_sent">successo, selezione inviata</string>
-    <string name="thank_you_for_your_submission">Grazie per l\'invio !</string>
+    <string name="your_decision_has_been_successfully_submitted">La tua decisione è stata inviata con successo</string>
     <string name="ticket_confirmation">conferma ticket</string>
     <string name="ticket_state">stato del ticket</string>
     <string name="ticket_status">stato ticket</string>

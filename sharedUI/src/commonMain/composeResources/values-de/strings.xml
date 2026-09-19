@@ -187,7 +187,7 @@
     <string name="suburban">Vorortverkehr</string>
     <string name="success_order_cancelled">Erfolgreich, Auftrag storniert</string>
     <string name="success_selection_sent">Erfolgreich, Auswahl gesendet</string>
-    <string name="thank_you_for_your_submission">Vielen Dank für Ihre Einreichung !</string>
+    <string name="your_decision_has_been_successfully_submitted">Ihre Entscheidung wurde erfolgreich übermittelt</string>
     <string name="ticket_confirmation">Scheinbestätigung</string>
     <string name="ticket_state">Scheinzustand</string>
     <string name="ticket_status">Scheinstatus</string>

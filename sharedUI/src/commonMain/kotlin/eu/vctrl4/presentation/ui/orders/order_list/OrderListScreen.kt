@@ -96,7 +96,8 @@ fun OrderListScreen(
             }, bottomBar = {
                     BottomAppBarWithFilterAndSearch(onFilterClick = onFilterClick, isSearchEnabled) // scrollBehavior
             },
-                contentWindowInsets = WindowInsets(0,0,0,0))
+                contentWindowInsets = WindowInsets(0,0,0,0)
+					)
         }
     }
 }

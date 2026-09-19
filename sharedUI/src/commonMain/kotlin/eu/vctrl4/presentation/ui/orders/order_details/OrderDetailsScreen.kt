@@ -100,7 +100,7 @@ fun OrderDetailsScreen(order: OrderDetails, titleTexts:List<IdNameValueName>, ti
             }, floatingActionButtonPosition = FabPosition.End, content = { innerPadding ->
 
                 Column(
-                    modifier = Modifier.padding(innerPadding).fillMaxSize()
+                    modifier = Modifier.padding(top = innerPadding.calculateTopPadding()).fillMaxSize()
                 ) {
                     if ("nav_transportation" == BOTTOM_APP_BAR_NAV_ITEMS.get(curStepNumber).name)
                     {
@@ -125,7 +125,9 @@ fun OrderDetailsScreen(order: OrderDetails, titleTexts:List<IdNameValueName>, ti
                         )
                         remStrSubtitle.value = BOTTOM_APP_BAR_NAV_ITEMS.get(curStepNumber).title
                     })
-            })
+            },
+                     contentWindowInsets = WindowInsets(0,0,0,0)
+					)
         }
     }
 }

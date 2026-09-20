@@ -1,12 +1,12 @@
 Car-control_demo
 
 A production-grade, architectural Cross-Platform Proof of Concept (PoC) for vehicle rentals and logistical fleet management, built using Kotlin Multiplatform (KMP) and Compose Multiplatform (CMP).
-
 This project demonstrates how to achieve over 80% code reuse across business logic, networking, data persistence, and the declarative UI layer for both Android and iOS form factors.
+
+
 🎯 Purpose & Compliance (NDA)
 
 This project is an architectural Cross-Platform Proof of Concept (PoC) derived directly from a live, high-load enterprise commercial product.
-
 To strictly respect intellectual property and Non-Disclosure Agreements (NDA) while proving deep architectural capabilities, the following methodology was executed:
 
     Legacy Migration & Modernization: Individual functional modules were systematically refactored within the original commercial production app—migrating the entire core infrastructure from a legacy stack (Retrofit / MVP / Gson / Java time & util) to a modern, KMP-ready foundation (Ktor / MVI / Kotlin Serialization / Kotlin Date-Time).
@@ -14,11 +14,14 @@ To strictly respect intellectual property and Non-Disclosure Agreements (NDA) wh
     Data Layer Decoupling: Live enterprise backend connections were substituted with a high-fidelity, local JSON-driven mock engine. Sensitive business modules (such as live booking engines and analytical chart pipelines) were intentionally omitted.
 
 As a result, the code quality, data structures, and state management flows within this repository are 100% equivalent to a live, production-grade enterprise application.
+
+
 📱 Implemented Features & Logistics Workflows
 
     Order & Ticket Lifecycle: Dedicated, state-driven screens displaying active, pending, and historical rental orders, order detail views, and e-vouchers (transport validation tickets).
     Fleet Tracking via OpenStreetMap (OSM): Native map integration rendering detailed route visualizations. The codebase contains full production logic for dynamic vehicle telemetry ingestion (polling interval array appending). For demonstration efficiency, the UI is configured to ingest historical vehicle logs from local JSON to instantly render completed routes with 'Start' and 'End' markers, avoiding real-time waiting bottlenecks during technical evaluation.
     Offline-First Resilience: Architecture optimized for zero-latency UI rendering and localized data operations, vital for transport operations in low-connectivity field zones.
+
 
 🛠 Architectural Stack
 
@@ -30,14 +33,22 @@ The codebase follows strict clean architecture and unidirectional data flow prin
     Data & Networking: Room Database (Multiplatform) for robust local persistence, Jetpack DataStore for preferences, and a pre-configured Ktor HTTP Client layer ready for REST API integration.
     Navigation: Type-safe Jetpack Compose Navigation.
 
+
 ⚙️ Project Structure & Requirements
 
     Android: Open in Android Studio, sync Gradle, and run the :composeApp configuration.
     iOS: Open iosApp/iosApp.xcworkspace in Xcode (macOS environment required) or deploy directly via Android Studio using the KMP plugin.
 
+
+📱 Video Demo
+
+<details>
+  <summary>🎬 Click to expand and watch the Simulator in action</summary>
+  <br>
+  <video src="https://github.com/user-attachments/assets/7fd7bc25-b95a-463c-a41e-db5b9d8e4d2c" controls width="100%"></video>
+</details>
+
+
 📄 License
 
 This project is open-source and available under the MIT License.
-
-[![Watch the video demo](https://raw.githubusercontent.com/perigelium/Car-control_demo/main/Car_control_video_first_frame.png)](https://github.com/perigelium/Car-control_demo/blob/main/Car-control_iOS_Simulator-2026-09-20.mp4)
-

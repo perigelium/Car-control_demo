@@ -39,4 +39,5 @@ The codebase follows strict clean architecture and unidirectional data flow prin
 
 This project is open-source and available under the MIT License.
 
-<video src="https://raw.githubusercontent.com/perigelium/Car-control_demo/main/Car-control_iOS_Simulator-2026-09-20.mp4" controls width="100%"></video>
+[![Watch the video demo](https://raw.githubusercontent.com/perigelium/Car-control_demo/main/Car_control_video_first_frame.png)](https://github.com/perigelium/Car-control_demo/blob/main/Car-control_iOS_Simulator-2026-09-20.mp4)
+

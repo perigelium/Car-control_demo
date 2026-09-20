@@ -100,7 +100,7 @@ fun OrderDetailsScreen(order: OrderDetails, titleTexts:List<IdNameValueName>, ti
             }, floatingActionButtonPosition = FabPosition.End, content = { innerPadding ->
 
                 Column(
-                    modifier = Modifier.padding(top = innerPadding.calculateTopPadding()).fillMaxSize()
+                    modifier = Modifier.padding(top = innerPadding.calculateTopPadding(), bottom = innerPadding.calculateTopPadding() + 60.dp).fillMaxSize()
                 ) {
                     if ("nav_transportation" == BOTTOM_APP_BAR_NAV_ITEMS.get(curStepNumber).name)
                     {

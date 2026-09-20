@@ -141,6 +141,7 @@ fun CenteredAppBar(
                 )
             }
         },
+        windowInsets = WindowInsets(0, 0, 0, 0),
         navigationIcon = {
             Row(modifier = Modifier.fillMaxHeight(), verticalAlignment = Alignment.CenterVertically) {
                 IconButton(onClick = onBackBtnClick) {

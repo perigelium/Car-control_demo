@@ -13,6 +13,7 @@ import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.business.datasource.storage.entities.*
 import eu.vctrl4.common.*
 import eu.vctrl4.theme.*
+import androidx.compose.ui.platform.LocalLayoutDirection
 import eu.vctrl4.ui.custom_views.composable.*
 import org.jetbrains.compose.resources.*
 
@@ -136,7 +137,7 @@ fun OrderDetailsTransportationPage(
     val scrollState = rememberScrollState()
 
     Surface(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth().verticalScroll(scrollState),
         shape = RoundedCornerShape(12.dp),
         border = BorderStroke(1.dp, Colors.cl_d8),
         color = Colors.white
@@ -144,7 +145,6 @@ fun OrderDetailsTransportationPage(
         Column(
             Modifier
                 .fillMaxWidth()
-                .verticalScroll(scrollState)
                 .padding(horizontal = 16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

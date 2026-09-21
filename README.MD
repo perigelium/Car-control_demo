@@ -5,6 +5,7 @@ and logistical fleet management, built using Kotlin Multiplatform (KMP) and Comp
 This project demonstrates how to achieve over 80% code reuse across business logic, networking, 
 data persistence, and the declarative UI layer for both Android and iOS form factors.
 
+<br>
 
 🎯 Purpose & Compliance (NDA)
 
@@ -26,6 +27,7 @@ the following methodology was executed:
 As a result, the code quality, data structures, and state management flows within this repository 
 are 100% equivalent to a live, production-grade enterprise application.
 
+<br>
 
 📱 Implemented Features & Logistics Workflows
 
@@ -38,6 +40,7 @@ are 100% equivalent to a live, production-grade enterprise application.
     Offline-First Resilience: Architecture optimized for zero-latency UI rendering and localized data operations, 
     vital for transport operations in low-connectivity field zones.
 
+<br>
 
 🛠 Architectural Stack
 
@@ -51,6 +54,7 @@ The codebase follows strict clean architecture and unidirectional data flow prin
     Jetpack DataStore for preferences, and a pre-configured Ktor HTTP Client layer ready for REST API integration.
     Navigation: Type-safe Jetpack Compose Navigation.
 
+<br>
 
 ⚙️ Project Structure & Requirements
 
@@ -58,6 +62,7 @@ The codebase follows strict clean architecture and unidirectional data flow prin
     iOS: Open iosApp/iosApp.xcworkspace in Xcode (macOS environment required) or 
     deploy directly via Android Studio using the KMP plugin.
 
+<br>
 
 📱 Video Demo
 
@@ -66,7 +71,7 @@ The codebase follows strict clean architecture and unidirectional data flow prin
   <br>
   <video src="https://github.com/user-attachments/assets/7fd7bc25-b95a-463c-a41e-db5b9d8e4d2c" controls width="100%"></video>
 </details>
-
+<br>
 
 📄 License
 

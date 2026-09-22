@@ -1,4 +1,4 @@
-package business.core
+package eu.vctrl4.business.core
 
 
 interface PrefsStoreManager {

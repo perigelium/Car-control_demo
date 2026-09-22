@@ -3,9 +3,9 @@ package eu.vctrl4.presentation.ui.onlineboard.order_list.view_model
 import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.business.core.*
 import eu.vctrl4.business.datasource.network.common.*
+import eu.vctrl4.business.datasource.storage.entities.OrderListRequest
 import eu.vctrl4.business.usecase.*
 import eu.vctrl4.common.*
-import eu.vctrl4.storage.entities.*
 
 class BoardOrderListViewModel(
 	private val boardOrderListUseCase: BoardOrderListUseCase,
@@ -13,26 +13,6 @@ class BoardOrderListViewModel(
                              ) :
 	BaseViewModel<BoardOrderListEvent, BoardOrderListViewState, BoardOrderListAction>() {
 	override fun setInitialState() = BoardOrderListViewState()
-
-	init {/*        runBlocking {
-            val guid = prefsStoreManager.readValue(PrefsStoreKeys.USER_GUID)
-            setState { copy(ordersRequest = prepareDefaultReportRequest(userGuid = guid)) }
-        }*/
-
-		/*        val sfUserGuid = prefsStoreManager.readStrValueAsFlow(PrefsStoreKeys.USER_GUID)?.stateIn(
-					scope = viewModelScope,
-					started = SharingStarted.WhileSubscribed(5000),
-					initialValue = null
-				)
-
-					val request = sfUserGuid?.value?.let {
-						guid -> prepareDefaultReportRequest(guid)
-
-					}
-					request?.let {
-						setState { copy(ordersRequest = it) }
-					}*/
-	}
 
 	fun viewIsReady() {
 		requestBoardOrderList()

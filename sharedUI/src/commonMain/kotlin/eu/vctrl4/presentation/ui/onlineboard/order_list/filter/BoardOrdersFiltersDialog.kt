@@ -16,21 +16,20 @@ import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.business.constants.Constants.CUSTOMER_COMPANY
 import eu.vctrl4.business.constants.Constants.CUSTOMER_DEPARTMENT
 import eu.vctrl4.business.constants.Constants.TIME_PERIOD_RANGE
+import eu.vctrl4.business.datasource.network.main.requests.OrderReportRequest
 import eu.vctrl4.business.datasource.storage.entities.*
 import eu.vctrl4.common.*
 import eu.vctrl4.presentation.ui.customviews.composable.*
 import eu.vctrl4.presentation.utils.*
 import eu.vctrl4.presentation.utils.OrderUtils.prepareDefaultReportRequest
-import eu.vctrl4.storage.remote.entities.*
 import eu.vctrl4.theme.*
-import eu.vctrl4.ui.custom_views.composable.*
 
 private var activeFiltersMask: Int = 0
 private var activeFiltersInt: MutableState<Int> = mutableIntStateOf(0)
 
 @Composable
 fun BoardOrdersFiltersDialog(
-    companies: List<Company>, request: OrderReportRequest, onSubmit: (OrderReportRequest) -> Unit, onDismiss: () -> Unit
+	companies: List<Company>, request: OrderReportRequest, onSubmit: (OrderReportRequest) -> Unit, onDismiss: () -> Unit
 )
 {
     val stRequest = remember { mutableStateOf(request) }

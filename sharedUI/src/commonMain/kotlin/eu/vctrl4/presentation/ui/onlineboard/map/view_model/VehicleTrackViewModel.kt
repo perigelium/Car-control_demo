@@ -1,13 +1,14 @@
-package eu.vctrl4.ui.online_board.map.view_model
+package eu.vctrl4.presentation.ui.onlineboard.map.view_model
 
 import androidx.lifecycle.*
 import eu.vctrl4.business.constants.*
 import eu.vctrl4.business.core.*
-import eu.vctrl4.business.domain.*
+import eu.vctrl4.business.datasource.network.main.requests.VehiclePositionRequest
+import eu.vctrl4.business.datasource.network.main.requests.VehicleTrackRequest
+import eu.vctrl4.business.datasource.storage.entities.BoardOrder
+import eu.vctrl4.business.datasource.storage.entities.MapPoint
 import eu.vctrl4.business.usecase.*
-import eu.vctrl4.presentation.ui.onlineboard.map.view_model.*
 import eu.vctrl4.presentation.utils.*
-import eu.vctrl4.storage.remote.entities.*
 import kotlinx.coroutines.*
 
 class VehicleTrackViewModel(
@@ -23,9 +24,6 @@ class VehicleTrackViewModel(
         when (event) {
             is VehicleTrackEvent.InitWithArgs -> handleInitArgs(event.order)
             is VehicleTrackEvent.ViewIsReady -> handleViewReady()
-            else ->
-            {
-            }
         }
     }
 
@@ -50,10 +48,10 @@ class VehicleTrackViewModel(
 
     private fun calculateIsRentFinished(order: BoardOrder): Boolean {
         order.RentEndDate?.let { endDateStr ->
-            val rentEndDateTime = DateTimeUtils.toDateTime(endDateStr, "yyyy-MM-dd'T'HH:mm:ss", true)?:0
+            val rentEndDateTime = DateTimeUtils.toDateTime(endDateStr, DateTimeUtils.SERVER_DATE_TIME_PATTERN_SHORT, true)?:0
             val longRomeTime = DateTimeUtils.timeSofiaNowInMillis.toEpochMilliseconds()
 
-            // 4 hours delay window preserved
+            // 4 hours delay preserved
             return longRomeTime >= (rentEndDateTime + 4 * Constants.HOUR_IN_MILLIS)
         }
         return false
@@ -63,12 +61,12 @@ class VehicleTrackViewModel(
         val currentOrder = state.value.order ?: return
 
         val request = VehicleTrackRequest(
-            currentOrder.NavDeviceId,
-            currentOrder.WialonToken,
-            currentOrder.RentStartDate,
-            currentOrder.RentEndDate,
-            currentOrder.WialonURL
-        )
+	        currentOrder.NavDeviceId,
+	        currentOrder.WialonToken,
+	        currentOrder.RentStartDate,
+	        currentOrder.RentEndDate,
+	        currentOrder.WialonURL
+                                         )
 
         executeUseCase(
             flow = getVehicleTrackUseCase.execute(request),
@@ -82,8 +80,6 @@ class VehicleTrackViewModel(
                 }
 
                 setState { copy(geoPoints = pointsList) }
-
-                // Chain operation sequence: request live position right after history loads fetchSingleVehiclePosition()
             },
             onLoading = { progress ->
                 setState { copy(progressBarState = progress) }
@@ -93,7 +89,11 @@ class VehicleTrackViewModel(
 
     private fun fetchSingleVehiclePosition() {
         val currentOrder = state.value.order ?: return
-        val request = VehiclePositionRequest(currentOrder.NavDeviceId, currentOrder.WialonToken, currentOrder.WialonURL)
+        val request = VehiclePositionRequest(
+	        currentOrder.NavDeviceId,
+	        currentOrder.WialonToken,
+	        currentOrder.WialonURL
+                                            )
 
         executeUseCase(
             flow = getVehiclePositionUseCase.execute(request),
@@ -109,7 +109,7 @@ class VehicleTrackViewModel(
                     }
                 }
             },
-            onLoading = { /* No-op single load */ }
+            onLoading = {  }
         )
     }
 
@@ -117,7 +117,7 @@ class VehicleTrackViewModel(
         pollingJob?.cancel() // Defend against duplicate timers
         pollingJob = viewModelScope.launch {
                 fetchSingleVehiclePosition()
-                delay(15000) // 15 seconds frequency loop
+                delay(15000)
         }
     }
 

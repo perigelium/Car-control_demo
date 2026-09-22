@@ -1,4 +1,4 @@
-package eu.vctrl4.ui.orders
+package eu.vctrl4.presentation.ui.orders
 
 
 import androidx.compose.foundation.*
@@ -14,8 +14,9 @@ import androidx.compose.ui.unit.*
 import androidx.compose.ui.window.*
 import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.common.*
+import eu.vctrl4.presentation.ui.customviews.composable.TextAreaField
+import eu.vctrl4.presentation.ui.customviews.composable.TopAppBarCustom
 import eu.vctrl4.theme.*
-import eu.vctrl4.ui.custom_views.composable.*
 
 
 @Composable
@@ -41,7 +42,7 @@ fun CancelOrderDialog(title: String?, onDismiss: () -> Unit, onSubmit: (String) 
 	                titleTxt = title ?: "",
 	                backColorId = Colors.cl_f5f5f5,
 	                height = 80
-                )
+                               )
 
                 Column(
                     modifier = Modifier
@@ -51,7 +52,7 @@ fun CancelOrderDialog(title: String?, onDismiss: () -> Unit, onSubmit: (String) 
                 ) {
                     Spacer(modifier = Modifier.height(48.dp))
 
-                    TextAreaField(strOptText = strComment, 10, 300)
+	                TextAreaField(strOptText = strComment, 10, 300)
                 }
 
                 Spacer(modifier = Modifier.height(48.dp))

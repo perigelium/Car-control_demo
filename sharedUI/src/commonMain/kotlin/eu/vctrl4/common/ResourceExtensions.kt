@@ -3,9 +3,16 @@ package eu.vctrl4.common
 import kotlinx.coroutines.*
 import org.jetbrains.compose.resources.*
 
-val StringResource.asState: String
+/*val StringResource.asState: String
 	get() = runBlocking {
 		getString(this@asState)
+	}*/
+
+val StringResource.asState: String
+	get() = try {
+		runBlocking { getString(this@asState) }
+	} catch (e: Exception) {
+		"StringResource.asState fallback"
 	}
 
 // definition: <string name="resource_name">all the orders by %1$s</string>

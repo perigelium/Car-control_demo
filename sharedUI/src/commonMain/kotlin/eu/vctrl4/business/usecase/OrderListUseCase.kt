@@ -4,7 +4,7 @@ import eu.vctrl4.business.core.*
 import eu.vctrl4.business.datasource.network.common.*
 import eu.vctrl4.business.datasource.network.main.*
 import eu.vctrl4.business.datasource.storage.entities.Order
-import eu.vctrl4.storage.entities.*
+import eu.vctrl4.business.datasource.storage.entities.OrderListRequest
 
 class OrderListUseCase(private val service: MainService, private val prefsStoreManager: PrefsStoreManagerImpl): BaseUseCase<OrderListRequest?, List<Order>?, List<Order>?>(prefsStoreManager)
 {

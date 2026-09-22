@@ -1,6 +1,8 @@
-package eu.vctrl4.storage.remote.entities
+package eu.vctrl4.business.datasource.storage.entities
 
-@kotlinx.serialization.Serializable
+import kotlinx.serialization.Serializable
+
+@Serializable
 class OrderHistoryItem
 {
     var Date: String? = null

@@ -3,8 +3,8 @@ package eu.vctrl4.business.usecase
 import eu.vctrl4.business.core.*
 import eu.vctrl4.business.datasource.network.common.*
 import eu.vctrl4.business.datasource.network.main.*
-import eu.vctrl4.storage.entities.*
-import eu.vctrl4.storage.remote.entities.*
+import eu.vctrl4.business.datasource.network.main.responses.OrdersCount
+import eu.vctrl4.business.datasource.storage.entities.OrderListRequest
 
 class OrdersCountUseCase(private val service: MainService, private val prefsStoreManager: PrefsStoreManagerImpl): BaseUseCase<OrderListRequest?, OrdersCount?, Int?>(prefsStoreManager)
 {

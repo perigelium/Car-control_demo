@@ -1,7 +1,7 @@
 package eu.vctrl4.presentation.ui.orders.order_list.view_model
 
 import eu.vctrl4.business.core.*
-import eu.vctrl4.storage.entities.*
+import eu.vctrl4.business.datasource.storage.entities.OrderListRequest
 
 sealed class OrderListEvent: ViewEvent
 {

@@ -1,4 +1,4 @@
-package eu.vctrl4.ui.custom_views.composable
+package eu.vctrl4.presentation.ui.customviews.composable
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*

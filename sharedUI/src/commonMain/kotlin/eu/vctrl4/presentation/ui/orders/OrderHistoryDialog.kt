@@ -14,11 +14,12 @@ import androidx.compose.ui.window.*
 import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.business.constants.*
 import eu.vctrl4.business.constants.Constants.ORDER_STATES_MAP
+import eu.vctrl4.business.datasource.storage.entities.OrderHistoryItem
 import eu.vctrl4.common.*
+import eu.vctrl4.presentation.ui.customviews.composable.TopAppBarCustom
+import eu.vctrl4.presentation.ui.customviews.composable.TwoSideStringsRowItem
 import eu.vctrl4.presentation.utils.*
-import eu.vctrl4.storage.remote.entities.*
 import eu.vctrl4.theme.*
-import eu.vctrl4.ui.custom_views.composable.*
 import org.jetbrains.compose.resources.*
 
 
@@ -49,8 +50,7 @@ fun OrderHistoryListItem(
 	                DateTimeUtils.SERVER_DATE_TIME_PATTERN_SHORT,
 	                DateTimeUtils.UI_DATE_TIME_PATTERN_LONG
                                                             )
-                //Text(text = "Date/Time: ${strTime ?: ""}", fontSize = 12.sp, color = Colors.cl_8e8e93)
-                TwoSideStringsRowItem(titleSubtitle = Pair("Date/Time:", strTime ?: ""), false)
+	            TwoSideStringsRowItem(titleSubtitle = Pair("Date/Time:", strTime ?: ""), false)
 
                 consumerTypeId?.apply {
                     Image(painter = painterResource(this), contentDescription = "", Modifier.size(24.dp))
@@ -73,8 +73,18 @@ fun OrderHistoryListItem(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                TwoSideStringsRowItem(titleSubtitle = Pair(statePairs[0].first, statePairs[0].second), false)
-                TwoSideStringsRowItem(titleSubtitle = Pair(statePairs[1].first, statePairs[1].second), false)
+                TwoSideStringsRowItem(
+	                titleSubtitle = Pair(
+		                statePairs[0].first,
+		                statePairs[0].second
+	                                    ), false
+                                     )
+	            TwoSideStringsRowItem(
+		            titleSubtitle = Pair(
+			            statePairs[1].first,
+			            statePairs[1].second
+		                                ), false
+	                                 )
             }
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -86,7 +96,7 @@ fun OrderHistoryListItem(
 
                     if (item.second?.isNotBlank() == true)
                     {
-                        TwoSideStringsRowItem(titleSubtitle = item)
+	                    TwoSideStringsRowItem(titleSubtitle = item)
 
                         Spacer(modifier = Modifier.height(16.dp))
                     }
@@ -114,7 +124,12 @@ fun OrderHistoryDialog(dialogTitle: String, listItems: List<OrderHistoryItem>, o
                     .padding(all = 8.dp)
                 , horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                TopAppBarCustom(backBtnTxt = "", onBackBtnClick = { onDismiss() }, titleTxt = dialogTitle, backColorId = Colors.cl_f5f5f5)
+                TopAppBarCustom(
+	                backBtnTxt = "",
+	                onBackBtnClick = { onDismiss() },
+	                titleTxt = dialogTitle,
+	                backColorId = Colors.cl_f5f5f5
+                               )
 
                 Spacer(modifier = Modifier.height(8.dp))
 

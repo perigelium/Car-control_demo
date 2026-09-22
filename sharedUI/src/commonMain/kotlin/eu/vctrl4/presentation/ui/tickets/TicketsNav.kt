@@ -23,7 +23,6 @@ import eu.vctrl4.presentation.utils.DateTimeUtils.SERVER_DATE_TIME_PATTERN_SHORT
 import eu.vctrl4.presentation.utils.DateTimeUtils.UI_DATE_PATTERN_SHORT
 import eu.vctrl4.theme.Colors.cl_69BE28
 import eu.vctrl4.theme.Colors.cl_e02020
-import eu.vctrl4.ui.tickets.ticket_confirmation.*
 import org.koin.compose.*
 
 @Composable

@@ -7,6 +7,7 @@ import androidx.navigation.*
 import androidx.navigation.compose.*
 import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.business.constants.*
+import eu.vctrl4.business.datasource.storage.entities.BoardOrder
 import eu.vctrl4.common.*
 import eu.vctrl4.presentation.navigation.*
 import eu.vctrl4.presentation.ui.*
@@ -17,8 +18,6 @@ import eu.vctrl4.presentation.ui.onlineboard.order_list.*
 import eu.vctrl4.presentation.ui.onlineboard.order_list.filter.*
 import eu.vctrl4.presentation.ui.onlineboard.order_list.filter.view_model.*
 import eu.vctrl4.presentation.ui.onlineboard.order_list.view_model.*
-import eu.vctrl4.storage.remote.entities.*
-import eu.vctrl4.ui.online_board.map.view_model.*
 import org.koin.compose.*
 import org.koin.compose.viewmodel.*
 

@@ -1,4 +1,4 @@
-package eu.vctrl4.ui.tickets.ticket_confirmation
+package eu.vctrl4.presentation.ui.tickets.ticket_confirmation
 
 
 import androidx.compose.foundation.*
@@ -19,7 +19,6 @@ import eu.vctrl4.common.*
 import eu.vctrl4.presentation.component.*
 import eu.vctrl4.presentation.ui.customviews.composable.*
 import eu.vctrl4.theme.*
-import eu.vctrl4.ui.custom_views.composable.*
 
 
 @Composable
@@ -75,10 +74,6 @@ fun RateAndSubmitTicketDialog(
 					modifier = Modifier.fillMaxHeight().padding(horizontal = 12.dp),
 					horizontalAlignment = Alignment.CenterHorizontally
 				      ) {
-
-/*					val fontFamily = FontFamily(
-						Font(Res.font.pfbeausanspro_regular, FontWeight.SemiBold),
-					                           )*/
 
 					Text(
 						text = dlgText ?: "",

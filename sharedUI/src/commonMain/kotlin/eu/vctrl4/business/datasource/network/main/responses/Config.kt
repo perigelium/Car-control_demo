@@ -1,7 +1,6 @@
 package eu.vctrl4.business.datasource.network.main.responses
 
 import androidx.room.*
-import eu.vctrl4.storage.remote.entities.*
 import kotlinx.serialization.*
 
 

@@ -8,9 +8,9 @@ import eu.vctrl4.business.core.UIComponent.DialogMsg
 import eu.vctrl4.business.core.UIComponent.DialogTitleText
 import eu.vctrl4.business.core.UIComponent.Toast
 import eu.vctrl4.business.datasource.network.common.*
+import eu.vctrl4.business.datasource.storage.entities.OrderListRequest
 import eu.vctrl4.business.usecase.*
 import eu.vctrl4.common.*
-import eu.vctrl4.storage.entities.*
 
 
 class OrderListViewModel(

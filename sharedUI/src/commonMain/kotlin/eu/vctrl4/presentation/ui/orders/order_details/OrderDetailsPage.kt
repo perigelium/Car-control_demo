@@ -12,8 +12,9 @@ import androidx.compose.ui.unit.*
 import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.business.datasource.storage.entities.*
 import eu.vctrl4.common.*
+import eu.vctrl4.presentation.ui.customviews.composable.TwoStringsColumnItem
+import eu.vctrl4.presentation.ui.customviews.composable.TwoStringsColumnList
 import eu.vctrl4.theme.*
-import eu.vctrl4.ui.custom_views.composable.*
 import org.jetbrains.compose.resources.*
 
 @Composable

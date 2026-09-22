@@ -1,6 +1,5 @@
 package eu.vctrl4.business.core
 
-import business.core.*
 import eu.vctrl4.common.*
 
 const val APP_DATASTORE = "eu.vctrl4"

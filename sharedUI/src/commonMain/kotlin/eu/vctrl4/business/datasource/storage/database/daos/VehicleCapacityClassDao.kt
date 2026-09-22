@@ -1,4 +1,4 @@
-package eu.vctrl4.storage.database.daos
+package eu.vctrl4.business.datasource.storage.database.daos
 
 
 import androidx.room.*
@@ -8,9 +8,6 @@ import kotlinx.coroutines.flow.*
 @Dao
 interface VehicleCapacityClassDao
 {
-/*    @Query("DELETE FROM vehicle_capacity_class WHERE 1")
-    fun delAllVehicleCapacityClasses()*/
-
     @Query("SELECT * FROM vehicle_capacity_class")
     suspend fun getAllVehicleCapacityClassesAsync(): List<VehicleCapacityClass> // id: String
 

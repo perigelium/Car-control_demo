@@ -1,7 +1,6 @@
-package eu.vctrl4.storage.entities
+package eu.vctrl4.business.datasource.storage.entities
 
 import androidx.room.*
-import eu.vctrl4.business.datasource.storage.entities.*
 
 
 @Entity(tableName = "vehicle_type_no_subtype", inheritSuperIndices = true, primaryKeys = ["CompanyId", "TypeId"] )

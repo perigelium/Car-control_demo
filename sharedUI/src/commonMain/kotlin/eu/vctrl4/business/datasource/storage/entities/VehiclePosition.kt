@@ -1,4 +1,4 @@
-package eu.vctrl4.storage.remote.entities
+package eu.vctrl4.business.datasource.storage.entities
 
 import kotlinx.serialization.*
 

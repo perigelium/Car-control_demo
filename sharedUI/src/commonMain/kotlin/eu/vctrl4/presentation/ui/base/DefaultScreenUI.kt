@@ -1,4 +1,4 @@
-package eu.vctrl4.ui.base
+package eu.vctrl4.presentation.ui.base
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.*
 import androidx.compose.ui.window.*
 import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.business.core.*
+import eu.vctrl4.business.core.ViewState
 import eu.vctrl4.common.*
 import eu.vctrl4.presentation.component.*
 import eu.vctrl4.theme.*

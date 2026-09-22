@@ -1,4 +1,4 @@
-package eu.vctrl4.ui.custom_views.composable
+package eu.vctrl4.presentation.ui.customviews.composable
 
 
 import androidx.compose.foundation.layout.*
@@ -9,7 +9,7 @@ import androidx.compose.ui.text.font.*
 import androidx.compose.ui.text.style.*
 import androidx.compose.ui.unit.*
 import autocontrol.sharedui.generated.resources.*
-import eu.vctrl4.storage.entities.*
+import eu.vctrl4.business.datasource.storage.entities.TitleTwoTextsAttrs
 import eu.vctrl4.theme.*
 import org.jetbrains.compose.resources.*
 

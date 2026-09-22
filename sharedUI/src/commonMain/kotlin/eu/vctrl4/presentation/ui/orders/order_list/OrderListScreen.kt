@@ -16,9 +16,10 @@ import androidx.compose.ui.unit.*
 import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.business.datasource.storage.entities.*
 import eu.vctrl4.common.*
+import eu.vctrl4.presentation.ui.customviews.composable.BottomAppBarWithFilterAndSearch
+import eu.vctrl4.presentation.ui.customviews.composable.SearchField
 import eu.vctrl4.presentation.ui.orders.order_list.view_model.*
 import eu.vctrl4.theme.*
-import eu.vctrl4.ui.custom_views.composable.*
 import org.jetbrains.compose.resources.*
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,16 +53,16 @@ fun OrderListScreen(
             if (isSearchEnabled.value)
             {
                 Spacer(modifier = Modifier.height(16.dp))
-                SearchField(
-                    searchQuery = searchQuery.value,
-                    onQuerySubmitted = {
-                        isSearchEnabled.value = false
-                        onSearchClick(it)
-                    },
-                    searchHint = Res.string.order_number.asState,
-                    modifier = Modifier.padding(start = 16.dp, end = 16.dp),
-                    keyboardType = KeyboardType.NumberPassword
-                )
+	            SearchField(
+		            searchQuery = searchQuery.value,
+		            onQuerySubmitted = {
+			            isSearchEnabled.value = false
+			            onSearchClick(it)
+		            },
+		            searchHint = Res.string.order_number.asState,
+		            modifier = Modifier.padding(start = 16.dp, end = 16.dp),
+		            keyboardType = KeyboardType.NumberPassword
+	                       )
                 val keyboardController = LocalSoftwareKeyboardController.current
                 keyboardController?.show()
             }
@@ -94,7 +95,10 @@ fun OrderListScreen(
 		                onScrolledToEnd = { onScrolledToEnd() },
 		                onActionInvoked = { onActionInvoked(it) })
             }, bottomBar = {
-                    BottomAppBarWithFilterAndSearch(onFilterClick = onFilterClick, isSearchEnabled) // scrollBehavior
+                    BottomAppBarWithFilterAndSearch(
+	                    onFilterClick = onFilterClick,
+	                    isSearchEnabled
+                                                   ) // scrollBehavior
             },
                 contentWindowInsets = WindowInsets(0,0,0,0)
 					)

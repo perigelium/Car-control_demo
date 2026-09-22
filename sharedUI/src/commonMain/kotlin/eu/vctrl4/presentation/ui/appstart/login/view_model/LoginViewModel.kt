@@ -3,7 +3,6 @@ package eu.vctrl4.presentation.ui.appstart.login.view_model
 
 import androidx.lifecycle.*
 import autocontrol.sharedui.generated.resources.*
-import business.core.PrefsStoreManager
 import eu.vctrl4.*
 import eu.vctrl4.business.constants.*
 import eu.vctrl4.business.core.*
@@ -16,7 +15,6 @@ import eu.vctrl4.business.datasource.storage.entities.*
 import eu.vctrl4.business.usecase.*
 import eu.vctrl4.common.*
 import eu.vctrl4.presentation.utils.*
-import eu.vctrl4.storage.remote.entities.*
 import kotlinx.coroutines.*
 
 class LoginViewModel(

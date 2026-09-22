@@ -1,4 +1,4 @@
-package eu.vctrl4.ui.orders.order_list.filter
+package eu.vctrl4.presentation.ui.orders.order_list.filter
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.*
@@ -35,9 +35,7 @@ import eu.vctrl4.common.*
 import eu.vctrl4.presentation.ui.customviews.composable.*
 import eu.vctrl4.presentation.utils.*
 import eu.vctrl4.presentation.utils.OrderUtils.prepareDefaultTicketsRequest
-import eu.vctrl4.storage.entities.*
 import eu.vctrl4.theme.*
-import eu.vctrl4.ui.custom_views.composable.*
 import org.jetbrains.compose.resources.*
 
 private var activeFiltersMask: Int = 0

@@ -1,8 +1,7 @@
-package eu.vctrl4.storage.entities
+package eu.vctrl4.business.datasource.storage.entities
 
 import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.business.constants.Constants.TICKET_STATES_MAP
-import eu.vctrl4.business.datasource.storage.entities.*
 import eu.vctrl4.common.*
 import eu.vctrl4.presentation.utils.*
 
@@ -78,14 +77,25 @@ class TitleTextAttrLists(val order:Order)
         if(strEquipTimeTicket == "00:00" ) strEquipTimeTicket = ""
 
         mutableListOf(
-            TitleTwoTextsAttrs(
-	            title = Res.string.time.asState, strText1 = strRentTimeOrder, strText2 = strRentTimeTicket, titleTextWidthBetween = 100, text1Text2WidthBetween = 90
-            ),
-            TitleTwoTextsAttrs(
-                title = "Equipment\noperating hours", strText1 = strEquipTimeOrder, strText2 = strEquipTimeTicket, titleTextWidthBetween = 100, text1Text2WidthBetween = 90
-            ), TitleTwoTextsAttrs(
-		        title = Res.string.mileage.asState, strText1 = order.Mileage?.toString()?:"-", strText2 = order.Ticket?.Mileage?.toString()?:"-", titleTextWidthBetween = 100, text1Text2WidthBetween = 90
-            )
+	        TitleTwoTextsAttrs(
+		        title = Res.string.time.asState,
+		        strText1 = strRentTimeOrder,
+		        strText2 = strRentTimeTicket,
+		        titleTextWidthBetween = 100,
+		        text1Text2WidthBetween = 90
+	                          ), TitleTwoTextsAttrs(
+		        title = "Equipment\noperating hours",
+		        strText1 = strEquipTimeOrder,
+		        strText2 = strEquipTimeTicket,
+		        titleTextWidthBetween = 100,
+		        text1Text2WidthBetween = 90
+	                                               ), TitleTwoTextsAttrs(
+		        title = Res.string.mileage.asState,
+		        strText1 = order.Mileage?.toString() ?: "-",
+		        strText2 = order.Ticket?.Mileage?.toString() ?: "-",
+		        titleTextWidthBetween = 100,
+		        text1Text2WidthBetween = 90
+	                                                                    )
         )
     }
 

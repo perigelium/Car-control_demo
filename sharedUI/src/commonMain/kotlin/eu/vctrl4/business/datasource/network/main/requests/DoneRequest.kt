@@ -1,8 +1,9 @@
-package eu.vctrl4.storage.remote.entities
+package eu.vctrl4.business.datasource.network.main.requests
+
+import kotlinx.serialization.Serializable
 
 
-
-@kotlinx.serialization.Serializable
+@Serializable
 class DoneRequest
 {
     var RequestDate: String? = null //":"2024-06-01 12:30",

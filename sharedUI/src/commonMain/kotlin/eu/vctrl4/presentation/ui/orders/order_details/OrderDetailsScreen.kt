@@ -16,8 +16,9 @@ import eu.vctrl4.business.constants.Constants.BOTTOM_APP_BAR_NAV_ITEMS
 import eu.vctrl4.business.constants.Constants.ORDER_STATES_MAP
 import eu.vctrl4.business.datasource.storage.entities.*
 import eu.vctrl4.common.*
+import eu.vctrl4.presentation.ui.customviews.composable.BottomAppBarOrderDetails
+import eu.vctrl4.presentation.ui.customviews.composable.CenteredAppBar
 import eu.vctrl4.theme.*
-import eu.vctrl4.ui.custom_views.composable.*
 import org.jetbrains.compose.resources.*
 
 val stepsCount: Int = BOTTOM_APP_BAR_NAV_ITEMS.size - 1

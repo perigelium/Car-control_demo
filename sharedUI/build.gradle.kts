@@ -92,6 +92,10 @@ kotlin {
 			implementation(kotlin("test"))
 			implementation(libs.compose.ui.test)
 			implementation(libs.kotlinx.coroutines.test)
+
+/*			implementation(kotlin("test"))
+			implementation(kotlin("test-common"))
+			implementation(kotlin("test-annotations-common"))*/
 		}
 
 		androidMain.dependencies {
@@ -121,6 +125,14 @@ android {
 	compileOptions {
 		sourceCompatibility = JavaVersion.VERSION_17
 		targetCompatibility = JavaVersion.VERSION_17
+	}
+
+	@Suppress("UnstableApiUsage")
+	testOptions {
+		unitTests {
+			// Prevents "Method ... not mocked" from crashing during Compose resource resolution
+			isReturnDefaultValues = true
+		}
 	}
 }
 

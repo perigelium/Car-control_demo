@@ -1,4 +1,4 @@
-package eu.vctrl4.storage.remote.entities
+package eu.vctrl4.business.datasource.network.main.requests
 
 import eu.vctrl4.business.constants.*
 

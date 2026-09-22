@@ -19,7 +19,6 @@ import eu.vctrl4.business.usecase.*
 import eu.vctrl4.common.*
 import eu.vctrl4.presentation.utils.*
 import eu.vctrl4.presentation.utils.OrderUtils.isOrderCancellable
-import eu.vctrl4.ui.orders.order_details.view_model.*
 import kotlinx.coroutines.*
 
 class OrderDetailsViewModel(
@@ -115,7 +114,7 @@ class OrderDetailsViewModel(
     {
         executeUseCase(requestVehicleTypesUseCase.execute(Unit), onSuccess = { vehicleTypes ->
             if (vehicleTypes?.isNotEmpty() == true)
-            { //val actualVehicleTypes: List<VehicleType> = vehicleTypes.filter { it.IsDeleted != true }
+            {
                 val actualVehicleTypes = vehicleTypes.filterNot { it.IsDeleted == true }
 
                 setState { copy(vehicleTypes = actualVehicleTypes) }
@@ -134,32 +133,6 @@ class OrderDetailsViewModel(
             setEvent(OrderDetailsEvent.OnUpdateNetworkState(it))
         })
     }
-
-    /*    fun observeOrderTypeVehicleOptionsLocalOnce(
-            vehicleSubtypeId: String, orderVehicleOptionValueIds: List<String>
-        )
-        {
-            val ldVTypes: LiveData<List<VehicleType>>? =
-                App.database!!.vehicleTypeDao()?.getVehicleTypeById(vehicleSubtypeId)
-
-            ldVTypes?.observe(lifecycleOwner, Observer<List<VehicleType>> { vehicleTypes ->
-
-                vehicleTypes.let {
-
-                    if (vehicleTypes.isNotEmpty())
-                    {
-                        val vTypeWithNotNullOptionTypes = vehicleTypes.filter { it.OptionTypes != null }
-                        val vTypeOptionTypes = vTypeWithNotNullOptionTypes.flatMap { it.OptionTypes!! }
-                        val actualVTypeOptionTypes = vTypeOptionTypes.filter { it.IsDeleted == false }
-
-                        if (actualVTypeOptionTypes.isNotEmpty())
-                        {
-                            observeVehicleOptionsLocalOnce(orderVehicleOptionValueIds, actualVTypeOptionTypes)
-                        }
-                    }
-                }
-            })
-        }*/
 
     fun getVehicleOptionsLocal()
     {

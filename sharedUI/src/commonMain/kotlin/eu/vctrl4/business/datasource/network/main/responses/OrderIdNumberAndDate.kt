@@ -1,8 +1,9 @@
-package eu.vctrl4.storage.remote.entities
+package eu.vctrl4.business.datasource.network.main.responses
+
+import kotlinx.serialization.Serializable
 
 
-
-@kotlinx.serialization.Serializable
+@Serializable
 class OrderIdNumberAndDate
 {
     val CompanyId:String? = null // "97b2a8a3-1a46-11e5-be74-00155dc6002b",

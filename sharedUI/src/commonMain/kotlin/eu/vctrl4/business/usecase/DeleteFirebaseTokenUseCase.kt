@@ -4,8 +4,8 @@ import eu.vctrl4.business.constants.*
 import eu.vctrl4.business.core.*
 import eu.vctrl4.business.datasource.network.common.*
 import eu.vctrl4.business.datasource.network.main.*
+import eu.vctrl4.business.datasource.network.main.requests.TokenObj
 import eu.vctrl4.business.datasource.network.main.responses.*
-import eu.vctrl4.storage.remote.entities.*
 
 class DeleteFirebaseTokenUseCase(private val service: MainService, private val prefsStoreManager: PrefsStoreManagerImpl) :
     BaseUseCase<Unit, WDError?, WDError?>(prefsStoreManager)

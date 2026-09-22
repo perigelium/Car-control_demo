@@ -1,8 +1,9 @@
-package eu.vctrl4.storage.entities
+package eu.vctrl4.business.datasource.storage.entities
+
+import kotlinx.serialization.Serializable
 
 
-
-@kotlinx.serialization.Serializable
+@Serializable
 class ExtParameters
 {
     var Route: String? = null  

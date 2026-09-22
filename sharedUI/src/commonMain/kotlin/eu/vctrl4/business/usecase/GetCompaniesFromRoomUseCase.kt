@@ -1,13 +1,13 @@
 package eu.vctrl4.business.usecase
 
 import eu.vctrl4.business.core.*
+import eu.vctrl4.business.datasource.storage.database.daos.CompanyDao
 import eu.vctrl4.business.datasource.storage.entities.*
-import eu.vctrl4.storage.database.daos.*
 import kotlinx.coroutines.flow.*
 
-class GetCompaniesFromRoomUseCase (
+open class GetCompaniesFromRoomUseCase(
     private val companyDao: CompanyDao
-) : BaseRoomManagedUseCase<Unit, List<Company>, List<Company>>() {
+                                      ) : BaseRoomManagedUseCase<Unit, List<Company>, List<Company>>() {
 
     override val progressBarType = ProgressBarState.Loading
 

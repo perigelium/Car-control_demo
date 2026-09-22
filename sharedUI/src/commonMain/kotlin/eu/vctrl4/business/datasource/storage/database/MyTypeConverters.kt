@@ -1,10 +1,10 @@
-package eu.vctrl4.storage.database
+package eu.vctrl4.business.datasource.storage.database
 
 import androidx.room.*
 import eu.vctrl4.business.datasource.storage.entities.*
 import kotlinx.serialization.json.*
 
-class TypeConverters {
+class MyTypeConverters {
 
 	/*    @TypeConverter
 		fun stringToListOfStrings(data: String?): List<String>?

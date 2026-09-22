@@ -3,8 +3,11 @@ package eu.vctrl4.business.datasource.storage.database
 
 import androidx.room.*
 import eu.vctrl4.business.constants.*
+import eu.vctrl4.business.datasource.storage.database.daos.CompanyDao
+import eu.vctrl4.business.datasource.storage.database.daos.VehicleCapacityClassDao
+import eu.vctrl4.business.datasource.storage.database.daos.VehicleOptionDao
+import eu.vctrl4.business.datasource.storage.database.daos.VehicleTypeDao
 import eu.vctrl4.business.datasource.storage.entities.*
-import eu.vctrl4.storage.database.daos.*
 
 @Suppress("NO_ACTUAL_FOR_EXPECT")
 expect object AppDatabaseConstructor : RoomDatabaseConstructor<AppDatabase> { // essential for iOS
@@ -14,7 +17,7 @@ expect object AppDatabaseConstructor : RoomDatabaseConstructor<AppDatabase> { //
 @Database(entities = [Company::class,
 	VehicleOption::class, VehicleType::class, VehicleCapacityClass::class
 					 ], version = Constants.DB_VERSION, exportSchema = false)
-@TypeConverters(eu.vctrl4.storage.database.TypeConverters::class)
+@TypeConverters(MyTypeConverters::class)
 @ConstructedBy(AppDatabaseConstructor::class) // essential for iOS
 abstract class AppDatabase : RoomDatabase() {
 

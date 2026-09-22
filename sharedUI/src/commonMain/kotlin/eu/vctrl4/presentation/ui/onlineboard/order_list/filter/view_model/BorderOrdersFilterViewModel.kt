@@ -37,7 +37,7 @@ class BoardOrdersFilterViewModel(private val getCompaniesFromRoomUseCase: GetCom
 	}
 
 
-	fun requestCompaniesLocal() {				//val job = viewModelScope.launch(start = CoroutineStart.LAZY) {
+	fun requestCompaniesLocal() {
 
 		getCompaniesFromRoom()
 
@@ -49,18 +49,6 @@ class BoardOrdersFilterViewModel(private val getCompaniesFromRoomUseCase: GetCom
 		val companiesWithZeroItem = customerCompanies.toMutableList()
 		companiesWithZeroItem.add(0, emptyCompany)
 
-		setState { copy(companies = companiesWithZeroItem) }				//}
-		//job.start()
+		setState { copy(companies = companiesWithZeroItem) }
 	}
-
-	/*    private suspend fun asyncCompanies(): List<Company>?
-		{
-			val coroutineName = object {}.javaClass.enclosingMethod?.name ?: ""
-
-			val scope = CoroutineScope(Job() + Dispatchers.IO + CoroutineName(coroutineName))
-			val deferred = scope.async {
-				return@async SessionVars.database!!.companyDao()?.getAllCompaniesAsync()
-			}
-			return deferred.await()
-		}*/
 }

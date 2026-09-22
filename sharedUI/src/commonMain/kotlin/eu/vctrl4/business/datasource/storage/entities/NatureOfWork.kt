@@ -1,10 +1,10 @@
-package eu.vctrl4.storage.entities
+package eu.vctrl4.business.datasource.storage.entities
 
 import androidx.room.*
-import eu.vctrl4.business.datasource.storage.entities.*
+import kotlinx.serialization.Serializable
 
 
-@kotlinx.serialization.Serializable
+@Serializable
 @Entity(tableName = "nature_of_work", inheritSuperIndices = true)
 class NatureOfWork(@PrimaryKey override var Id: String, override var Name: String?
 ) : IdName()

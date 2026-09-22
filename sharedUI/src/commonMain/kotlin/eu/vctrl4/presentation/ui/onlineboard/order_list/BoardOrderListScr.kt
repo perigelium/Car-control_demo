@@ -1,4 +1,4 @@
-package eu.vctrl4.ui.online_board.order_list
+package eu.vctrl4.presentation.ui.onlineboard.order_list
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -12,9 +12,9 @@ import androidx.compose.ui.text.font.*
 import androidx.compose.ui.tooling.preview.*
 import androidx.compose.ui.unit.*
 import autocontrol.sharedui.generated.resources.*
-import eu.vctrl4.storage.remote.entities.*
+import eu.vctrl4.business.datasource.storage.entities.BoardOrder
+import eu.vctrl4.presentation.ui.customviews.composable.ImgTitleTextRowItem
 import eu.vctrl4.theme.*
-import eu.vctrl4.ui.custom_views.composable.*
 import org.jetbrains.compose.resources.*
 
 @Composable

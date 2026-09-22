@@ -1,4 +1,4 @@
-package eu.vctrl4.ui.orders.order_list.order_history
+package eu.vctrl4.presentation.ui.orders.order_list.order_history
 
 import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.business.core.*

@@ -7,15 +7,13 @@ import eu.vctrl4.business.core.UIComponent.DialogMsg
 import eu.vctrl4.business.core.UIComponent.DialogTitleText
 import eu.vctrl4.business.core.UIComponent.Toast
 import eu.vctrl4.business.datasource.network.common.*
+import eu.vctrl4.business.datasource.storage.entities.OrderListRequest
 import eu.vctrl4.business.usecase.*
 import eu.vctrl4.common.*
-import eu.vctrl4.storage.entities.*
 
 
 class TicketListViewModel(
-	private val orderListUseCase: OrderListUseCase,
-	private val ordersCountUseCase: OrdersCountUseCase
-                         ) :
+	private val orderListUseCase: OrderListUseCase) :
 	BaseViewModel<TicketListEvent, TicketListViewState, TicketListAction>() {
 	fun viewIsReady() {
 		requestTicketList()
@@ -128,8 +126,6 @@ class TicketListViewModel(
 				} else {
 					setState { copy(items = listOf(order)) }
 				}
-
-				//requestTicketList(searchRequest, resetList = false, isListSearch = true)
 			}
 		} else {
 			display { DialogMsg(JAlertResponse(Res.string.error_enter_at_least_4_digits.asState)) }

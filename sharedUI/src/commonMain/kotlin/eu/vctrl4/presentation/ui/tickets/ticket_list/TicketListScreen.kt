@@ -14,10 +14,10 @@ import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.business.datasource.storage.entities.*
 import eu.vctrl4.common.*
 import eu.vctrl4.presentation.ui.*
+import eu.vctrl4.presentation.ui.customviews.composable.SearchField
 import eu.vctrl4.presentation.ui.tickets.*
 import eu.vctrl4.presentation.ui.tickets.ticket_list.view_model.*
 import eu.vctrl4.theme.*
-import eu.vctrl4.ui.custom_views.composable.*
 import org.jetbrains.compose.resources.*
 
 @Composable
@@ -30,8 +30,8 @@ fun TicketListScreen(
 	topAppBar: @Composable () -> Unit,
 	state: TicketListViewState,
                     ) {
-	val searchQuery = remember { mutableStateOf("") } //val scrollState = rememberScrollState()
-	var isSearchEnabled = remember { mutableStateOf(false) } //var isConfirmTicketDialogVisible by remember { mutableStateOf(false) }
+	val searchQuery = remember { mutableStateOf("") }
+	val isSearchEnabled = remember { mutableStateOf(false) }
 	var selectedOrder by remember { mutableStateOf(Order()) }
 
 	Surface(
@@ -40,24 +40,7 @@ fun TicketListScreen(
 
 		Box(modifier = Modifier.fillMaxSize()) {
 
-			/*            if (isConfirmTicketDialogVisible)
-						{
-							ConfirmCancelDialog(
-								dialogTitle = Res.string.confirmation_required.asState,
-								strMsg = Res.string.confirm_ticket.asState,
-								submitBtnlabel = Res.string.confirm.asState,
-								onSubmit = {isConfirmTicketDialogVisible = false
-									onTicketConfirmClicked(selectedOrder) },
-								dismissBtnlabel = Res.string.cancel.asState,
-								onDismiss = {isConfirmTicketDialogVisible = false })
-						}*/
-
 			Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
-
-
-				/*                val fontFamily = FontFamily(
-									Font(Res.font.pfbeausanspro_regular, FontWeight.Normal),
-								)*/
 
 				topAppBar()
 

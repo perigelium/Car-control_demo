@@ -9,10 +9,9 @@ import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.business.datasource.storage.entities.*
 import eu.vctrl4.common.*
 import eu.vctrl4.presentation.navigation.*
+import eu.vctrl4.presentation.ui.base.*
+import eu.vctrl4.presentation.ui.orders.*
 import eu.vctrl4.presentation.ui.orders.order_details.view_model.*
-import eu.vctrl4.ui.custom_views.composable.*
-import eu.vctrl4.ui.orders.*
-import eu.vctrl4.ui.orders.order_details.view_model.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
@@ -64,7 +63,9 @@ fun OrderDetailsNav(viewModel: OrderDetailsViewModel, strAction:String?, popUp: 
         composable<OrderDetailsNavigation.OrderDetails> {
 
             DefaultScreenWrap(
-                errors = viewModel.errors, progressBarState = viewModel.state.value.progressBarState, screenContent = {
+	            errors = viewModel.errors,
+	            progressBarState = viewModel.state.value.progressBarState,
+	            screenContent = {
 
 		            OrderDetailsScreen(
 			            viewModel.state.value.orderDetails,
@@ -74,10 +75,10 @@ fun OrderDetailsNav(viewModel: OrderDetailsViewModel, strAction:String?, popUp: 
 			            viewModel.state.value.titleTextsTranspBottom,
 			            { popUp(false) },
 			            { strAction ->
-					            performAction(strAction, viewModel.state.value.orderDetails)
+				            performAction(strAction, viewModel.state.value.orderDetails)
 			            },
 			            navigate = { navigate(it) })
-                })
+	            })
 
             LaunchedEffect(strAction) {
                 delay(500L)
@@ -91,8 +92,8 @@ fun OrderDetailsNav(viewModel: OrderDetailsViewModel, strAction:String?, popUp: 
 	            title = Res.string.are_you_sure_you_want_to_cancel_your_order.asState,
 	            onDismiss = { navigator.popBackStack() },
 	            onSubmit = {
-                    viewModel.onTriggerEvent(OrderDetailsEvent.CancelOrder(it))
-                })
+		            viewModel.onTriggerEvent(OrderDetailsEvent.CancelOrder(it))
+	            })
 
             LaunchedEffect(Unit) {
                 delay(500L)

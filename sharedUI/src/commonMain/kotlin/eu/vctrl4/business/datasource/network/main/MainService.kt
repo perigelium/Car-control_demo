@@ -4,8 +4,6 @@ import eu.vctrl4.business.datasource.network.common.*
 import eu.vctrl4.business.datasource.network.main.requests.*
 import eu.vctrl4.business.datasource.network.main.responses.*
 import eu.vctrl4.business.datasource.storage.entities.*
-import eu.vctrl4.storage.entities.*
-import eu.vctrl4.storage.remote.entities.*
 
 
 interface MainService {

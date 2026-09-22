@@ -1,4 +1,4 @@
-package eu.vctrl4.ui.orders.order_details.view_model
+package eu.vctrl4.presentation.ui.orders.order_details.view_model
 
 import eu.vctrl4.business.core.*
 

@@ -23,8 +23,6 @@ import eu.vctrl4.business.datasource.network.main.responses.*
 import eu.vctrl4.business.datasource.storage.entities.*
 import eu.vctrl4.business.utils.*
 import eu.vctrl4.common.*
-import eu.vctrl4.storage.entities.*
-import eu.vctrl4.storage.remote.entities.*
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.request.*

@@ -10,8 +10,8 @@ import androidx.lifecycle.*
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.R
+import eu.vctrl4.business.datasource.storage.entities.VehiclePosition
 import eu.vctrl4.presentation.ui.onlineboard.map.view_model.*
-import eu.vctrl4.storage.remote.entities.*
 import eu.vctrl4.theme.*
 import org.osmdroid.config.*
 import org.osmdroid.tileprovider.tilesource.*

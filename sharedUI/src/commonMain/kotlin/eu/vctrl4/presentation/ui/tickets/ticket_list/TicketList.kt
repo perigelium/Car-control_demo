@@ -16,10 +16,10 @@ import autocontrol.sharedui.generated.resources.*
 import eu.vctrl4.business.constants.Constants.TICKET_STATES_MAP
 import eu.vctrl4.business.datasource.storage.entities.*
 import eu.vctrl4.common.*
+import eu.vctrl4.presentation.ui.customviews.composable.ImgTitleTextRowItem
+import eu.vctrl4.presentation.ui.customviews.composable.ThreeStringsRowItem
 import eu.vctrl4.presentation.utils.*
-import eu.vctrl4.storage.entities.*
 import eu.vctrl4.theme.*
-import eu.vctrl4.ui.custom_views.composable.*
 import org.jetbrains.compose.resources.*
 
 

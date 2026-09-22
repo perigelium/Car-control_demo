@@ -65,33 +65,4 @@ class TicketsFilterViewModel(val getCompaniesFromRoomUseCase: GetCompaniesFromRo
 
 			onLoading = { setState { copy(progressBarState = it) } })
 	}
-
-/*    fun requestCompaniesLocal()
-    {
-            val job = viewModelScope.launch(start = CoroutineStart.LAZY) {
-
-                val allCompanies = emptyList<Company>() //asyncCompanies()
-
-                val customerCompanies: MutableList<Company> = allCompanies?.filter { it.IsCustomer == true } as MutableList<Company>
-
-                val emptyCompany = Company()
-                emptyCompany.Name = Res.string.all.asState
-                val companiesWithZeroItem = customerCompanies.toMutableList()
-                companiesWithZeroItem.add(0, emptyCompany)
-
-                setState { copy(companies = companiesWithZeroItem) }
-            }
-            job.start()
-    }*/
-
-/*    private suspend fun asyncCompanies(): List<Company>?
-    {
-        val coroutineName = object {}.javaClass.enclosingMethod?.name ?: ""
-
-        val scope = CoroutineScope(Job() + Dispatchers.IO + CoroutineName(coroutineName))
-        val deferred = scope.async {
-            return@async SessionVars.Companion.database!!.companyDao()?.getAllCompaniesAsync()
-        }
-        return deferred.await()
-    }*/
 }

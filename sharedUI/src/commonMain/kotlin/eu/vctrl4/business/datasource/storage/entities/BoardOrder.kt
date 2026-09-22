@@ -1,12 +1,12 @@
-package eu.vctrl4.storage.remote.entities
+package eu.vctrl4.business.datasource.storage.entities
 
 import autocontrol.sharedui.generated.resources.*
-import eu.vctrl4.business.datasource.storage.entities.*
 import eu.vctrl4.common.*
 import eu.vctrl4.presentation.utils.*
+import kotlinx.serialization.Serializable
 import kotlin.uuid.*
 
-@kotlinx.serialization.Serializable
+@Serializable
 class BoardOrder
 {
     val NavDeviceId: Int? = null //

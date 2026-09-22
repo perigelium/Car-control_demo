@@ -1,7 +1,7 @@
 package eu.vctrl4.presentation.ui.onlineboard.order_list.view_model
 
 import eu.vctrl4.business.core.*
-import eu.vctrl4.storage.remote.entities.*
+import eu.vctrl4.business.datasource.network.main.requests.OrderReportRequest
 
 sealed class BoardOrderListEvent: ViewEvent
 {

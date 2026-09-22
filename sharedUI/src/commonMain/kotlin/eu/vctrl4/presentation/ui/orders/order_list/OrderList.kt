@@ -17,9 +17,8 @@ import eu.vctrl4.business.constants.Constants.ORDER_STATES_MAP
 import eu.vctrl4.business.constants.Constants.ORDER_TYPES_ICONS
 import eu.vctrl4.business.constants.Constants.PRIORITY_COLORS_INT
 import eu.vctrl4.business.datasource.storage.entities.*
-import eu.vctrl4.storage.entities.*
+import eu.vctrl4.presentation.ui.customviews.composable.ImgTitleTextRowItem
 import eu.vctrl4.theme.*
-import eu.vctrl4.ui.custom_views.composable.*
 import org.jetbrains.compose.resources.*
 
 

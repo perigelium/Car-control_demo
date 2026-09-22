@@ -3,7 +3,8 @@ package eu.vctrl4.business.usecase
 import eu.vctrl4.business.core.*
 import eu.vctrl4.business.datasource.network.common.*
 import eu.vctrl4.business.datasource.network.main.*
-import eu.vctrl4.storage.remote.entities.*
+import eu.vctrl4.business.datasource.network.main.requests.VehiclePositionRequest
+import eu.vctrl4.business.datasource.storage.entities.VehiclePosition
 
 class GetVehiclePositionUseCase(private val service: MainService):
     BaseUseCase<VehiclePositionRequest, VehiclePosition?, VehiclePosition?>()

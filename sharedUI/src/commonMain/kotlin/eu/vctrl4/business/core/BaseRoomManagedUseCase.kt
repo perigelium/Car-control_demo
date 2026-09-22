@@ -21,7 +21,7 @@ abstract class BaseRoomManagedUseCase<Params, Entity, Result>()
 
     open val showLoading: Boolean = true
 
-    fun execute(params: Params, isFlow: Boolean = true): Flow<DataStateLocal<Result>> = flow {
+    open fun execute(params: Params, isFlow: Boolean = true): Flow<DataStateLocal<Result>> = flow {
         try
         {
             if (showLoading) emit(DataStateLocal.Loading(progressBarType))

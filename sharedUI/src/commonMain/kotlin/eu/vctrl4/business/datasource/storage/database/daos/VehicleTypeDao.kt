@@ -1,4 +1,4 @@
-package eu.vctrl4.storage.database.daos
+package eu.vctrl4.business.datasource.storage.database.daos
 
 
 import androidx.room.*

@@ -5,7 +5,6 @@ import eu.vctrl4.business.core.*
 sealed class TicketsFilterViewEvent: ViewEvent
 {
     object OnFilterSubmitted : TicketsFilterViewEvent()
-    //object OnFilterReset : TicketsFilterViewEvent()
     object OnFilterInvoked: TicketsFilterViewEvent()
     class OnShowMessage(val message:String): TicketsFilterViewEvent()
 }

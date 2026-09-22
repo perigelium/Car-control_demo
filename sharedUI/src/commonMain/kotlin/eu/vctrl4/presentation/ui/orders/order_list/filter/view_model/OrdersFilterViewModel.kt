@@ -7,7 +7,6 @@ import eu.vctrl4.business.core.UIComponent.Toast
 import eu.vctrl4.business.datasource.storage.entities.*
 import eu.vctrl4.business.usecase.*
 import eu.vctrl4.common.*
-import eu.vctrl4.ui.orders.order_list.filter.view_model.*
 
 
 class OrdersFilterViewModel(val getCompaniesFromRoomUseCase: GetCompaniesFromRoomUseCase) :
@@ -24,7 +23,6 @@ class OrdersFilterViewModel(val getCompaniesFromRoomUseCase: GetCompaniesFromRoo
     {
         when (event)
         {
-
             is OrdersFilterViewEvent.OnFilterSubmitted ->
             {
                 setAction { OrdersFilterAction.Popup }
@@ -49,7 +47,7 @@ class OrdersFilterViewModel(val getCompaniesFromRoomUseCase: GetCompaniesFromRoo
                 val suppDepartments = initSuppliersList(supplierCompanies)
 
                 val customerCompanies: MutableList<Company> =
-                    allCompanies?.filter { it.IsCustomer == true } as MutableList<Company>
+                    allCompanies.filter { it.IsCustomer == true } as MutableList<Company>
 
                 val emptyCompany = Company()
                 emptyCompany.Name = Res.string.all.asState
@@ -72,17 +70,6 @@ class OrdersFilterViewModel(val getCompaniesFromRoomUseCase: GetCompaniesFromRoo
 
             onLoading = { setState { copy(progressBarState = it) } })
     }
-
-    /*    private suspend fun asyncCompanies(): List<Company>?
-        {
-            val coroutineName = object {}.javaClass.enclosingMethod?.name ?: ""
-
-            val scope = CoroutineScope(Job() + Dispatchers.IO + CoroutineName(coroutineName))
-            val deferred = scope.async {
-                return@async App.Companion.database.companyDao()?.getAllCompaniesAsync()
-            }
-            return deferred.await()
-        }*/
 
     private fun initSuppliersList(companies: List<Company>): List<Department>
     {

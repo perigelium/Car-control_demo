@@ -1,8 +1,7 @@
-package eu.vctrl4.storage.entities
+package eu.vctrl4.business.datasource.storage.entities
 
 class Vehicle
 {
-    var AsatCode: String? = null
     var Capacity: Float? = null
     var Comment: String? = null
     var CompanyId: String? = null

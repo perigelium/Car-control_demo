@@ -1,7 +1,7 @@
 package eu.vctrl4.common
 
 import android.content.Context
-import business.core.PrefsStoreManager
+import eu.vctrl4.business.core.PrefsStoreManager
 import eu.vctrl4.business.core.*
 import eu.vctrl4.business.datasource.storage.database.*
 import eu.vctrl4.di.*

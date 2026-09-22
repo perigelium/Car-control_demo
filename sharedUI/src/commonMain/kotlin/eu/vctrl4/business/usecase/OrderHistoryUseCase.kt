@@ -3,8 +3,8 @@ package eu.vctrl4.business.usecase
 import eu.vctrl4.business.core.*
 import eu.vctrl4.business.datasource.network.common.*
 import eu.vctrl4.business.datasource.network.main.*
+import eu.vctrl4.business.datasource.network.main.requests.OrderRequest
 import eu.vctrl4.business.datasource.storage.entities.*
-import eu.vctrl4.storage.remote.entities.*
 
 class OrderHistoryUseCase(private val service: MainService, private val prefsStoreManager: PrefsStoreManagerImpl): BaseUseCase<String, List<OrderDetails>?, List<OrderHistoryItem>?>(prefsStoreManager)
 {

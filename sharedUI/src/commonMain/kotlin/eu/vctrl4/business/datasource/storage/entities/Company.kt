@@ -32,7 +32,7 @@ class Company : IdName()
     var VehicleTypeGroupId: String? = null
     var WithVAT: Boolean? = null
 
-    
+    @TypeConverters
     var Departments: List<Department>? = null
 
     override fun toString(): String

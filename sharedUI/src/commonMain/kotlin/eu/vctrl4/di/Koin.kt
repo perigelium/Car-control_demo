@@ -3,7 +3,6 @@ package eu.vctrl4.di
 
 import androidx.room.*
 import androidx.sqlite.driver.bundled.*
-import business.core.*
 import eu.vctrl4.business.core.*
 import eu.vctrl4.business.datasource.network.main.*
 import eu.vctrl4.business.datasource.storage.database.*
@@ -11,15 +10,15 @@ import eu.vctrl4.business.usecase.*
 import eu.vctrl4.common.*
 import eu.vctrl4.presentation.ui.appstart.login.view_model.*
 import eu.vctrl4.presentation.ui.logout.*
+import eu.vctrl4.presentation.ui.onlineboard.map.view_model.VehicleTrackViewModel
 import eu.vctrl4.presentation.ui.onlineboard.order_list.filter.view_model.*
 import eu.vctrl4.presentation.ui.onlineboard.order_list.view_model.*
 import eu.vctrl4.presentation.ui.orders.order_details.view_model.*
 import eu.vctrl4.presentation.ui.orders.order_list.filter.view_model.*
+import eu.vctrl4.presentation.ui.orders.order_list.order_history.OrderHistoryViewModel
 import eu.vctrl4.presentation.ui.orders.order_list.view_model.*
 import eu.vctrl4.presentation.ui.tickets.ticket_list.filter.view_model.*
 import eu.vctrl4.presentation.ui.tickets.ticket_list.view_model.*
-import eu.vctrl4.ui.online_board.map.view_model.*
-import eu.vctrl4.ui.orders.order_list.order_history.*
 import kotlinx.coroutines.*
 import kotlinx.serialization.json.*
 import org.koin.core.context.*
@@ -59,7 +58,7 @@ fun koinAppModule() = module {
 	viewModel { VehicleTrackViewModel(get(), get()) }
 
 	single { TicketsFilterViewModel(get()) }
-	viewModel { TicketListViewModel(get(), get()) }
+	viewModel { TicketListViewModel(get()) }
 
 	viewModel { OrderListViewModel(get(), get()) }
 	single { OrderListUseCase(get(), get()) }

@@ -1,10 +1,9 @@
 package eu.vctrl4.presentation.utils
 
 import eu.vctrl4.business.constants.*
+import eu.vctrl4.business.datasource.network.main.requests.OrderReportRequest
 import eu.vctrl4.business.datasource.storage.entities.*
 import eu.vctrl4.presentation.utils.DateTimeUtils.getTodayBeginInMillis
-import eu.vctrl4.storage.entities.*
-import eu.vctrl4.storage.remote.entities.*
 import kotlinx.datetime.*
 import kotlin.time.Clock
 import kotlin.time.Duration.Companion.days

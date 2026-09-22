@@ -1,7 +1,6 @@
 package eu.vctrl4.business.datasource.storage.entities
 
-import eu.vctrl4.storage.entities.*
-import eu.vctrl4.storage.remote.entities.*
+import eu.vctrl4.business.datasource.network.main.requests.DoneRequest
 import kotlinx.serialization.*
 
 @Serializable

@@ -1,58 +1,54 @@
-Car-control_demo
+# Logistics & Fleet Management Architecture Showcase
 
-A production-grade, architectural Cross-Platform Proof of Concept (PoC) for vehicle rentals 
-and logistical fleet management, built using Kotlin Multiplatform (KMP) and Compose Multiplatform (CMP).
-This project demonstrates how to achieve over 80% code reuse across business logic, networking, 
-data persistence, and the declarative UI layer for both Android and iOS form factors.
-
-<br>
-
-🎯 Purpose & Compliance (NDA)
-
-This project is an architectural Cross-Platform Proof of Concept (PoC) derived directly from a live, 
-high-load enterprise commercial product.
-To strictly respect intellectual property and Non-Disclosure Agreements (NDA) while proving deep architectural capabilities, 
-the following methodology was executed:
-
-    Legacy Migration & Modernization: Individual functional modules were systematically refactored within 
-    the original commercial production app—migrating the entire core infrastructure from a legacy stack 
-    (Retrofit / MVP / Gson / Java time & util) to a modern, KMP-ready foundation 
-    (Ktor / MVI / Kotlin Serialization / Kotlin Date-Time).
-    Codebase Isolation: This modernized, production-proven business logic and architecture was then cleanly decoupled 
-    and copied directly into this Compose Multiplatform environment.
-    Data Layer Decoupling: Live enterprise backend connections were substituted with a high-fidelity, 
-    local JSON-driven mock engine. Sensitive business modules 
-    (such as live booking engines and analytical chart pipelines) were intentionally omitted.
-
-As a result, the code quality, data structures, and state management flows within this repository 
-are 100% equivalent to a live, production-grade enterprise application.
+A production-grade architectural showcase demonstrating a highly scalable, robust native Android core with 
+a structurally decoupled Multiplatform logic layer. Derived from commercial vehicle rental and transport ticketing workflows,
+this repository highlights enterprise-level data resilience, clean architecture, and modern declarative UI practices.
 
 <br>
 
-📱 Implemented Features & Logistics Workflows
+## 🎯 Purpose & Production-Proven Foundations (NDA Compliant)
 
-    Order & Ticket Lifecycle: Dedicated, state-driven screens displaying active, pending, and historical rental orders, 
-    order detail views, and e-vouchers (transport validation tickets).
-    Fleet Tracking via OpenStreetMap (OSM): Native map integration rendering detailed route visualizations. 
-    The codebase contains full production logic for dynamic vehicle telemetry ingestion (polling interval array appending). 
-    For demonstration efficiency, the UI is configured to ingest historical vehicle logs from local JSON to instantly render 
-    completed routes with 'Start' and 'End' markers, avoiding real-time waiting bottlenecks during technical evaluation.
-    Offline-First Resilience: Architecture optimized for zero-latency UI rendering and localized data operations, 
+This project is a decoupled architectural showcase based on field-tested commercial software. To strictly respect intellectual property 
+and Non-Disclosure Agreements (NDA) while demonstrating high-level engineering capabilities, the following engineering choices were made:
+
+    • Legacy Migration & Modernization: The underlying core infrastructure was systematically refactored and modernized from 
+    a legacy corporate stack (Retrofit / MVP / Java util) into a clean, 
+    modern foundation utilizing Ktor, MVI, Kotlin Serialization, and Kotlinx Date-Time.
+    • Architectural Isolation: The production-proven business logic and data structures were isolated and decoupled into 
+    a clean repository, ensuring a modular codebase ready for seamless cross-platform scaling (KMP).
+    • Data Layer Decoupling: Production enterprise backend endpoints were substituted with 
+    a high-fidelity local JSON-driven mock engine to simulate data stress-tests. Sensitive proprietary modules 
+    (such as live booking engines and analytics chart pipelines) were intentionally omitted.
+
+As a result, the code quality, thread management, and state propagation models 
+within this repository are 100% equivalent to a live, production-grade enterprise application.
+
+<br>
+
+## 📱 Implemented Features & Logistics Workflows
+
+    • Order & Ticket Lifecycle: State-driven screens displaying active, pending, and historical rental orders, detailed item views, 
+    and e-vouchers (transport validation tickets) managed via predictable MVI state streams.
+    • Fleet Tracking via OpenStreetMap (OSM): Map integration rendering detailed route visualizations. 
+    The codebase contains full production logic for dynamic vehicle telemetry processing. 
+    For demonstration efficiency, the engine is configured to process localized telemetry logs 
+    to instantly render historical routes with 'Start' and 'End' markers, avoiding real-time waiting bottlenecks during technical evaluation.
+    • Offline-First Resilience: Local database structures optimized for zero-latency UI rendering and localized operations, 
     vital for transport operations in low-connectivity field zones.
 
 <br>
 
-🛠 Architectural Stack
+## 🛠 Architectural Stack & Engineering Standards
 
-The codebase follows strict clean architecture and unidirectional data flow principles:
+The codebase follows strict clean architecture, unidirectional data flow (UDF), and SOLID principles:
 
-    UI & Presentation: Compose Multiplatform for cross-platform UI rendering with MVI (Model-View-Intent) 
-    state management for predictable state flows.
-    Dependency Injection: Koin (Multiplatform distribution).
-    Asynchronous Execution: Kotlin Coroutines & Channels for structured concurrency and reactive state streams.
-    Data & Networking: Room Database (Multiplatform) for robust local persistence, 
-    Jetpack DataStore for preferences, and a pre-configured Ktor HTTP Client layer ready for REST API integration.
-    Navigation: Type-safe Jetpack Compose Navigation.
+    • UI & Presentation: Jetpack Compose (using Compose Multiplatform for flexible rendering) paired with MVI (Model-View-Intent) 
+    for robust state tracking and predictable UI behavior.
+    • Dependency Injection: Koin (Multiplatform distribution) for clean, low-overhead module configuration.
+    • Asynchronous Execution: Kotlin Coroutines & Channels for structured concurrency, background thread pooling, and reactive data streams.
+    • Data & Networking: Room Database (Multiplatform) for robust local persistence, Jetpack DataStore for secure preference caching, 
+    and a pre-configured Ktor HTTP Client layer ready for REST API integration.
+    • Navigation: Type-safe Jetpack Compose Navigation.
 
 <br>
 

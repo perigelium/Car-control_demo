@@ -25,7 +25,16 @@ kotlin {
 	iosArm64()
 	iosSimulatorArm64()
 
-    targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>().configureEach {
+	listOf(iosX64(), iosArm64(), iosSimulatorArm64()).forEach { iosTarget ->
+		iosTarget.binaries.framework {
+			baseName = "SharedCore"
+			isStatic = true
+
+			// Custom arguments
+		}
+	}
+
+/*     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>().configureEach {
         binaries.withType<org.jetbrains.kotlin.gradle.plugin.mpp.Framework>().configureEach {
             // Fixes the bundle identifier layout warning
             freeCompilerArgs += listOf("-Xbinary=bundleId=eu.vctrl4.iosApp.sharedUI")
@@ -33,22 +42,21 @@ kotlin {
             // Instructs the Kotlin Native compiler to expect FirebaseMessaging
             linkerOpts("-framework", "FirebaseMessaging")
         }
-    }
+    } */
 
     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>().configureEach {
         binaries.withType<org.jetbrains.kotlin.gradle.plugin.mpp.Framework>().configureEach {
-            freeCompilerArgs += listOf("-Xbinary=bundleId=eu.vctrl4.iosApp.sharedUI")
             isStatic = true
         }
     }
 
-    targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>().configureEach {
+/*     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>().configureEach {
 		if (konanTarget.family.isAppleFamily) {
 			binaries.framework {
 				linkerOpts("-framework", "MapKit")
 			}
 		}
-	}
+	} */
 
 	sourceSets {
 		commonMain.dependencies {

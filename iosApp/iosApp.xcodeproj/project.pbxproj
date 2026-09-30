@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BF5C9CEC2E4F34762CF8FD1 /* KotlinMultiplatformLinkedPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 163A48060DC822451D0DD0AF /* KotlinMultiplatformLinkedPackage */; };
 		A93A953B29CC810C00F8E227 /* iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93A953A29CC810C00F8E227 /* iosApp.swift */; };
 		A93A953F29CC810D00F8E227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93A953E29CC810D00F8E227 /* Assets.xcassets */; };
 		A93A954229CC810D00F8E227 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93A954129CC810D00F8E227 /* Preview Assets.xcassets */; };
-		D76353E9305F515B00E103C0 /* sharedUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7E8BDAD2FD5D34A0025ED05 /* sharedUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7B8AEEB305F4672001F63DF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7E8BDB42FD5E7690025ED05 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,7 +21,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D76353E9305F515B00E103C0 /* sharedUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,7 +32,6 @@
 		A93A953A29CC810C00F8E227 /* iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosApp.swift; sourceTree = "<group>"; };
 		A93A953E29CC810D00F8E227 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A93A954129CC810D00F8E227 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D7E8BDAD2FD5D34A0025ED05 /* sharedUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = sharedUI.framework; path = "../sharedUI/build/xcode-frameworks/Debug/iphonesimulator18.1/sharedUI.framework"; sourceTree = "<group>"; };
 		D7E8BDB42FD5E7690025ED05 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -43,6 +41,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7B8AEEB305F4672001F63DF /* CoreLocation.framework in Frameworks */,
+				1BF5C9CEC2E4F34762CF8FD1 /* KotlinMultiplatformLinkedPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				D7E8BDB42FD5E7690025ED05 /* CoreLocation.framework */,
-				D7E8BDAD2FD5D34A0025ED05 /* sharedUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,6 +109,9 @@
 			dependencies = (
 			);
 			name = iosApp;
+			packageProductDependencies = (
+				163A48060DC822451D0DD0AF /* KotlinMultiplatformLinkedPackage */,
+			);
 			productName = iosApp;
 			productReference = A93A953729CC810C00F8E227 /* Autocontrol.app */;
 			productType = "com.apple.product-type.application";
@@ -139,6 +140,7 @@
 			);
 			mainGroup = A93A952E29CC810C00F8E227;
 			packageReferences = (
+				297A224B7E9CA96C5914382D /* XCLocalSwiftPackageReference "KotlinMultiplatformLinkedPackage" */,
 			);
 			productRefGroup = A93A953829CC810C00F8E227 /* Products */;
 			projectDirPath = "";
@@ -164,6 +166,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		A9D80A052AAB5CDE006C8738 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -179,6 +182,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd \"$SRCROOT/..\"\n./gradlew :sharedUI:embedAndSignAppleFrameworkForXcode\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -338,6 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = eu.vctrl4.iosApp;
 				PRODUCT_NAME = Autocontrol;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -367,6 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = eu.vctrl4.iosApp;
 				PRODUCT_NAME = Autocontrol;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -394,6 +400,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		297A224B7E9CA96C5914382D /* XCLocalSwiftPackageReference "KotlinMultiplatformLinkedPackage" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = KotlinMultiplatformLinkedPackage;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		163A48060DC822451D0DD0AF /* KotlinMultiplatformLinkedPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KotlinMultiplatformLinkedPackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A93A952F29CC810C00F8E227 /* Project object */;
 }

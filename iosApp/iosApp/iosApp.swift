@@ -1,13 +1,15 @@
 import SwiftUI
 import sharedUI
+//import FirebaseCore
 
 @main
 struct ComposeApp: App {
 
     init() {
-        KoinKt.doInitKoin { _ in }
 
-        //UserDefaults.standard.register(defaults: ["UserAgent": "CarControlTrackerApp/3.0 (contact@restrans.eu)"])
+        //FirebaseApp.configure()
+
+        KoinKt.doInitKoin { _ in }
         URLProtocol.registerClass(OsmURLProtocol.self)
     }
 

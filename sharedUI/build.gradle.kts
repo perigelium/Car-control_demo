@@ -1,7 +1,7 @@
-
-
+@file:OptIn(ExperimentalKotlinGradlePluginApi::class)
 
 import com.codingfeline.buildkonfig.compiler.*
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.*
 
 val isDebugBuild = gradle.startParameter.taskNames.any { it.contains("debug", ignoreCase = true) }
@@ -27,12 +27,31 @@ kotlin {
 
 	listOf(iosX64(), iosArm64(), iosSimulatorArm64()).forEach { iosTarget ->
 		iosTarget.binaries.framework {
-			baseName = "SharedCore"
+			baseName = "sharedUI"
 			isStatic = true
 
 			// Custom arguments
 		}
 	}
+
+    targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>().configureEach {
+        binaries.withType<org.jetbrains.kotlin.gradle.plugin.mpp.Framework>().configureEach {
+            isStatic = true
+        }
+    }
+
+    // 🔥 ADD THIS BLOCK TO INTEGRATE SWIFTPM
+/*    swiftPMDependencies {
+        // Example: Adding a remote Git dependency (e.g., Firebase Analytics)
+        swiftPackage(
+            url = url("https://github.com/firebase/firebase-ios-sdk.git"),
+            version = from("12.5.0"),
+            products = listOf(product("FirebaseAnalytics"))
+        )
+
+        // Example: Adding a local Swift package if you have one
+        // localPackage(project.file("../my-local-package"))
+    }*/
 
 /*     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>().configureEach {
         binaries.withType<org.jetbrains.kotlin.gradle.plugin.mpp.Framework>().configureEach {
@@ -44,11 +63,7 @@ kotlin {
         }
     } */
 
-    targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>().configureEach {
-        binaries.withType<org.jetbrains.kotlin.gradle.plugin.mpp.Framework>().configureEach {
-            isStatic = true
-        }
-    }
+
 
 /*     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>().configureEach {
 		if (konanTarget.family.isAppleFamily) {

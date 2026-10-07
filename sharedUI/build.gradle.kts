@@ -3,6 +3,7 @@
 import com.codingfeline.buildkonfig.compiler.*
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.*
+import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 val isDebugBuild = gradle.startParameter.taskNames.any { it.contains("debug", ignoreCase = true) }
 
@@ -22,6 +23,8 @@ kotlin {
 		compilerOptions { jvmTarget = JvmTarget.JVM_17 }
 	}
 
+    val xcf = XCFramework("SharedUI")
+
 	iosArm64()
 	iosSimulatorArm64()
 
@@ -30,7 +33,9 @@ kotlin {
 			baseName = "sharedUI"
 			isStatic = true
 
-			// Custom arguments
+            xcf.add(this)
+
+            // Custom arguments
 		}
 	}
 

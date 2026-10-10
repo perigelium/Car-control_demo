@@ -1,0 +1,67 @@
+name: Publish iOS Binary Manually
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-publish:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      # 1. Build the XCFramework
+      - name: Build XCFramework
+        run: ./gradlew :sharedUI:assembleReleaseXCFramework
+
+      # 2. Zip the framework
+      - name: Zip Framework
+        run: |
+          cd sharedUI/build/XCFrameworks/release
+          zip -r ../../../sharedUI.xcframework.zip sharedUI.xcframework 
+          cd ../../../
+
+      # 3. Calculate the SHA-256 Checksum
+      - name: Calculate Checksum
+        id: checksum
+        run: |
+          SHASUM=\$(swift package compute-checksum sharedUI.xcframework.zip)
+          echo "checksum=SHASUM" >> GITHUB_OUTPUT
+          echo "Calculated Checksum: \$SHASUM"
+
+      # 4. Upload the zip file to GitHub Releases
+      - name: Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v\${{ github.run_number }}
+          name: Release v\${{ github.run_number }}
+          files: sharedUI.xcframework.zip
+        env:
+          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+
+      # 5. Update your Package.swift
+      - name: Update Package.swift
+        run: |
+          RELEASE_URL="https://github.com github.repository /releases/download/v{{ github.run_number }}/sharedUI.xcframework.zip"
+          CHECKSUM="\${{ steps.checksum.outputs.checksum }}"
+          
+          sed -i '' -E "s|url: \"[^\"]+\"|url: \"\$RELEASE_URL\"|g" Package.swift
+          sed -i '' -E "s|checksum: \"[^\"]+\"|checksum: \"\$CHECKSUM\"|g" Package.swift
+
+      # 6. Commit the updated Package.swift
+      - name: Commit and Push Package.swift
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@://github.com"
+          git add Package.swift
+          git commit -m "chore: update iOS binary to v\${{ github.run_number }}"
+          git push

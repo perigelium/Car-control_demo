@@ -8,6 +8,10 @@ on:
 jobs:
   build-and-publish:
     runs-on: macos-latest
+    # CRITICAL FIX: Grants the workflow permission to write changes back to your repository
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,35 +37,37 @@ jobs:
       - name: Calculate Checksum
         id: checksum
         run: |
-          SHASUM=\$(swift package compute-checksum sharedUI.xcframework.zip)
-          echo "checksum=SHASUM" >> GITHUB_OUTPUT
-          echo "Calculated Checksum: \$SHASUM"
+          SHASUM=$(swift package compute-checksum sharedUI.xcframework.zip)
+          # FIX: Correctly exports the variable value to downstream steps
+          echo "checksum=$SHASUM" >> $GITHUB_OUTPUT
+          echo "Calculated Checksum: $SHASUM"
 
       # 4. Upload the zip file to GitHub Releases
       - name: Create GitHub Release
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v\${{ github.run_number }}
-          name: Release v\${{ github.run_number }}
+          tag_name: v${{ github.run_number }}
+          name: Release v${{ github.run_number }}
           files: sharedUI.xcframework.zip
         env:
-          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # 5. Update your Package.swift
       - name: Update Package.swift
         run: |
-          RELEASE_URL="https://github.com github.repository /releases/download/v{{ github.run_number }}/sharedUI.xcframework.zip"
-          CHECKSUM="\${{ steps.checksum.outputs.checksum }}"
+          # FIX: Fixed the malformed repository path interpolation
+          RELEASE_URL="https://github.com{{ github.repository }}/releases/download/v${{ github.run_number }}/sharedUI.xcframework.zip"
+          CHECKSUM="${{ steps.checksum.outputs.checksum }}"
           
-          sed -i '' -E "s|url: \"[^\"]+\"|url: \"\$RELEASE_URL\"|g" Package.swift
-          sed -i '' -E "s|checksum: \"[^\"]+\"|checksum: \"\$CHECKSUM\"|g" Package.swift
+          sed -i '' -E "s|[[:space:]]*url: \"[^\"]+\"|            url: \"$RELEASE_URL\"|g" Package.swift
+          sed -i '' -E "s|[[:space:]]*checksum: \"[^\"]+\"|            checksum: \"$CHECKSUM\"|g" Package.swift
 
       # 6. Commit the updated Package.swift
       - name: Commit and Push Package.swift
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@://github.com"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add Package.swift
-          git commit -m "chore: update iOS binary to v\${{ github.run_number }}"
+          git commit -m "chore: update iOS binary to v${{ github.run_number }}"
           git push

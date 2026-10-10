@@ -24,7 +24,7 @@ jobs:
 
       # 1. Build the XCFramework
       - name: Build XCFramework
-        run: ./gradlew :sharedUI:assembleReleaseXCFramework
+        run: ./gradlew :sharedUI:assembleSharedUIReleaseXCFramework
 
       # 2. Zip the framework
       - name: Zip Framework

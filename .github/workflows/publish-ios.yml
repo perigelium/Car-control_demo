@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    #paths:
+    #  - 'sharedUI/**'
 
 jobs:
   build-and-publish:
@@ -22,9 +24,12 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
+      - name: Setup Gradle Cache
+        uses: gradle/actions/setup-gradle@v3
+
       # 1. Build the XCFramework
       - name: Build XCFramework
-        run: ./gradlew :sharedUI:assembleSharedUIReleaseXCFramework
+        run: ./gradlew :sharedUI:assembleSharedUIReleaseXCFramework --no-daemon --build-cache -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=512m"
 
       # 2. Zip the framework
       - name: Zip Framework

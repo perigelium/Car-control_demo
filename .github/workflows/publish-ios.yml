@@ -1,6 +1,7 @@
 name: Publish iOS Binary Manually
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -10,7 +11,6 @@ on:
 jobs:
   build-and-publish:
     runs-on: macos-latest
-    # CRITICAL FIX: Grants the workflow permission to write changes back to your repository
     permissions:
       contents: write
 
@@ -35,8 +35,9 @@ jobs:
       - name: Zip Framework
         run: |
           cd sharedUI/build/XCFrameworks/release
-          zip -r ../../../sharedUI.xcframework.zip sharedUI.xcframework 
-          cd ../../../
+          # Zips clean inside the folder but saves the resulting binary back into the repository root
+          zip -r "$GITHUB_WORKSPACE/sharedUI.xcframework.zip" sharedUI.xcframework 
+          cd "$GITHUB_WORKSPACE"
 
       # 3. Calculate the SHA-256 Checksum
       - name: Calculate Checksum
@@ -68,11 +69,14 @@ jobs:
           sed -i '' -E "s|[[:space:]]*url: \"[^\"]+\"|            url: \"$RELEASE_URL\"|g" Package.swift
           sed -i '' -E "s|[[:space:]]*checksum: \"[^\"]+\"|            checksum: \"$CHECKSUM\"|g" Package.swift
 
-      # 6. Commit the updated Package.swift
+      # 6. Commit the updated Package.swift (FIXED INFINITE LOOP BUG)
       - name: Commit and Push Package.swift
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.email "41898282+github-actions[bot]@://github.com"
           git add Package.swift
-          git commit -m "chore: update iOS binary to v${{ github.run_number }}"
-          git push
+          
+          # Added [skip ci] to prevent this commit from triggering a duplicate workflow loop
+          git commit -m "chore: update iOS binary to v${{ github.run_number }} [skip ci]"
+          git push origin main
+

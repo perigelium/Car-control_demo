@@ -10,8 +10,8 @@ on:
   push:
     branches:
       - main
-    #paths:
-    #  - 'sharedUI/**'
+    paths:
+      - 'sharedUI/**'
 
 jobs:
   build-and-publish:

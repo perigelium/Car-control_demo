@@ -11,8 +11,10 @@ Architectural Intent & Enterprise Legacy Rescue (NDA Compliant)
 
 This repository serves as a production-grade architectural blueprint demonstrating the systematic modernization of a 
 high-load commercial fleet rental and transport ticketing application.
+<br>
 To fully respect intellectual property and Non-Disclosure Agreements (NDAs) of the original enterprise software, 
-this project isolates the architecture while decoupling the data layers. 
+this project isolates the architecture while decoupling the data layers.
+<br>
 It provides an explicit answer to the question: How do you safely migrate a massive, 
 mission-critical live application into a modern, cross-platform stack without breaking production?
 
@@ -22,10 +24,13 @@ The Modernization Framework Applied Here:
 
 • The Legacy Baseline: The original commercial application operated on an outdated corporate stack 
 (Java / MVP Architecture / Retrofit / Heavy XML Layouts & ViewBindings).
+<br>
 • The Refactoring Strategy: The underlying core infrastructure was systematically deconstructed. 
 Business logic was extracted into a decoupled multiplatform layer, and the UI was completely rewritten into declarative patterns.
+<br>
 • The Production Isolation: Enterprise backend endpoints were substituted with a high-fidelity local JSON-driven mock engine 
-to simulate high-throughput data stress tests without exposing proprietary APIs. 
+to simulate high-throughput data stress tests without exposing proprietary APIs.
+<br>
 Sensitive analytical chart pipelines and booking engines were intentionally omitted.
 As a result, the code quality, structured concurrency models, and state propagation flows within this repository 
 are 100% equivalent to a live, production-grade enterprise system.
@@ -38,12 +43,16 @@ Implemented Core Flows & Modernized Workflows
 state-driven screens displaying active, pending, and historical rental orders. 
 Features complex e-vouchers (transport validation tickets) managed via robust, 
 unidirectional MVI state streams to eliminate state-drift and rendering race conditions.
+<br>
 • Visual Fleet Operations (OpenStreetMap Integration): A fully decoupled map rendering engine 
-capable of drawing high-density route visualizations. 
-The codebase contains full production-grade logic for processing vehicle coordinate feeds. 
+capable of drawing high-density route visualizations.
+<br>
+The codebase contains full production-grade logic for processing vehicle coordinate feeds.
+<br>
 For benchmarking efficiency, it utilizes localized simulation data 
 to instantly render historical routes with dynamic "Start" and "End" markers, 
 eliminating real-time testing bottlenecks during engineering evaluations.
+<br>
 • Zero-Latency Offline-First Resilience: Engineered with an advanced 
 local data synchronization and persistence architecture. 
 This guarantees flawless UI rendering and uninterrupted transactional operations, 
@@ -55,16 +64,21 @@ Modernized Architectural Stack & Engineering Standards
 
 The codebase enforces strict separation of concerns, clean architecture boundaries, 
 and predictable data flows across all layers:
+<br>
 • UI & Presentation Layer: Written 100% in Jetpack Compose (utilizing Compose Multiplatform) 
 paired with MVI (Model-View-Intent) to ensure a completely deterministic user interface behavior 
 and eliminate legacy View lifecycle bugs.
+<br>
 • Dependency Injection Architecture: Configured via Koin (Multiplatform distribution) 
 for low-overhead, modular dependency graphs, replacing manual injection.
+<br>
 • Structured Concurrency: Powered by Kotlin Coroutines, Flow, and Channels to handle heavy background processing, 
 state buffering, and high-performance thread pooling safely.
+<br>
 • Persistence & Data Engines: Powered by Room Database (Multiplatform) for resilient local data storage, 
 Jetpack DataStore for secure preference caching, 
 and a highly customizable Ktor HTTP Client layer pre-configured for modern, reactive REST API communication.
+<br>
 • Type-Safe Routing: Implements the latest type-safe Jetpack Compose Navigation patterns, 
 stripping away legacy XML-based string arguments and fragment-transaction vulnerabilities.
 

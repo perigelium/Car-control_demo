@@ -1,37 +1,41 @@
 [versions]
 
-koin = "4.2.1"
+koin = "4.2.2"
 
 korlibsCrypto = "6.1.0"
 
-kotlin = "2.4.20"
-compose-multiplatform = "1.10.3"
+kotlin = "2.4.21"
+compose-multiplatform = "1.12.2"
 
 material3 = "1.9.0"
-agp = "9.0.1"
+agp = "9.2.1"
 androidx-activityCompose = "1.13.0"
-androidx-lifecycle = "2.10.0"
+androidx-lifecycle = "2.11.0"
 
-kotlinx-coroutines = "1.10.2"
-kotlinx-coroutines-test = "1.10.2"
+kotlinx-coroutines = "1.11.0"
+kotlinx-coroutines-test = "1.11.0"
 
-ktor = "3.4.3"
+ktor = "3.6.0"
 kotlinx-serialization = "1.11.0"
-kotlinx-datetime = "0.7.1"
+kotlinx-datetime = "0.8.0"
 
 navigationCompose = "2.9.2"
 
-androidx-core = "1.18.0"
+androidx-core = "1.19.1"
 androidx-datastore = "1.2.1"
 
 osmdroidAndroid = "6.1.20"
 
-room = "2.8.4"
-sqlite = "2.6.2"
+room = "2.8.5"
+sqlite = "2.7.1"
 
 ksp = "2.3.6"
-build-config = "0.20.0"
+build-config = "0.23.0"
 material-icons-core = "1.7.3"
+
+junit = "4.13.2"
+turbine = "1.2.1"
+foundation = "1.12.1"
 
 [libraries]
 
@@ -54,6 +58,7 @@ compose-ui-test = { module = "org.jetbrains.compose.ui:ui-test", version.ref = "
 compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3" }
 androidx-activityCompose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 
+junit = { module = "junit:junit", version.ref = "junit" }
 navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 
 koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }
@@ -87,6 +92,8 @@ room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 
 androidx-sqlite = { group = "androidx.sqlite", name = "sqlite", version.ref = "sqlite" }
 sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+androidx-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
 
 
 [plugins]

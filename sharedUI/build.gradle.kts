@@ -25,10 +25,12 @@ kotlin {
 
     val xcf = XCFramework("SharedUI")
 
-	iosArm64()
-	iosSimulatorArm64()
+	val iosTargets = listOf(
+		iosArm64(),
+		iosSimulatorArm64()
+	                       )
 
-	listOf(iosX64(), iosArm64(), iosSimulatorArm64()).forEach { iosTarget ->
+	iosTargets.forEach { iosTarget ->
 		iosTarget.binaries.framework {
 			baseName = "sharedUI"
 			isStatic = true
@@ -116,14 +118,19 @@ kotlin {
 			implementation(libs.jetbrains.lifecycle.runtime.compose)
 		}
 
+
+			val androidUnitTest by getting {
+				dependencies {
+					implementation(kotlin("test"))
+					implementation(libs.junit)
+					implementation(libs.turbine)
+				}
+			}
+
 		commonTest.dependencies {
 			implementation(kotlin("test"))
 			implementation(libs.compose.ui.test)
 			implementation(libs.kotlinx.coroutines.test)
-
-/*			implementation(kotlin("test"))
-			implementation(kotlin("test-common"))
-			implementation(kotlin("test-annotations-common"))*/
 		}
 
 		androidMain.dependencies {
@@ -135,6 +142,15 @@ kotlin {
 		}
 
 		iosMain.dependencies {
+
+/* 			implementation(libs.compose.runtime)
+			implementation(libs.compose.ui)
+			implementation(libs.compose.foundation)
+			implementation(libs.compose.resources)
+			implementation(libs.compose.ui.tooling.preview)
+			implementation(libs.sqlite.bundled)
+			implementation(libs.jetbrains.lifecycle.runtime.compose) */
+
 			implementation(libs.ktor.client.darwin)
 		}
 	}
@@ -146,7 +162,7 @@ dependencies {
 
 android {
 	namespace = "eu.vctrl4"
-	compileSdk = 36
+	compileSdk = 37
 	defaultConfig {
 		minSdk = 23
 	}

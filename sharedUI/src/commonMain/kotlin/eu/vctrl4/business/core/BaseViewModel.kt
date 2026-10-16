@@ -17,6 +17,9 @@ abstract class BaseViewModel<Event : ViewEvent,
     private val _state: MutableState<UiState> = mutableStateOf(initialState)
     val state = _state
 
+    private val _stateFlow = MutableStateFlow(initialState)
+    val stateFlow: StateFlow<UiState> = _stateFlow.asStateFlow()
+
     private val _event: MutableSharedFlow<Event> = MutableSharedFlow()
 
     private val _action: Channel<SingleAction> = Channel()
@@ -45,6 +48,7 @@ abstract class BaseViewModel<Event : ViewEvent,
     protected fun setState(reducer: UiState.() -> UiState) {
         val newState = state.value.reducer()
         _state.value = newState
+        _stateFlow.value = newState
     }
 
     protected fun setAction(builder: () -> SingleAction) {

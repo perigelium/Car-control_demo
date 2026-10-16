@@ -16,8 +16,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "sharedUIFramework",
-            url: "https://github.com{{ github.repository }}/releases/download/v7/sharedUI.xcframework.zip",
-            checksum: "af8eb5403fde29eaa392db8c72e4e5cce812ae29d864a136c776929b236a9250"
+            url: "https://github.com{{ github.repository }}/releases/download/v8/sharedUI.xcframework.zip",
+            checksum: "d53be69d1c1e3b1b163376b9b0ddb175b7b8420d51e6745f0658728aa876abe9"
         ),
         .target(
             name: "sharedUITarget",
